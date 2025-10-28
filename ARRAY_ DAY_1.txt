@@ -1,0 +1,173 @@
+variable:
+==========
+-> variable is nothing but just name of memory. which is holding single value at a time
+   Example: 
+   int a=10;
+
+-> if we want to store multiple values in single variable at time then we should use another concept known as array.
+
+
+Drawback of ordinary variable:
+---------------------------------
+-> holds only single value at a time.
+
+#####################################
+
+Array
+=======
+-> array is collection of homogeneous/hetrogeneous(same/diff) elements,
+   which is holding contigous memory location.
+
+-> Example :
+             int arr[]={1,2,3,4}; //homogeneous type array
+
+-> Example-> 
+           Employee e=new Employee(); //reference type array
+
+         
+->  when we are creating array object then internally JVM will create some internal class & also providing some name to the iinternal class. 
+    then JVM will Load that class and then only will create array object inside Heap memory.
+
+
+Charecteristics of array:
+=========================
+
+1) Homogeneous :-
+   -> same type elements holding by array.
+   -> hetrogeneous array we will learn during polymorphysm(concept of upcasting)
+ 
+2) fixed in size :
+   -> once the array object is created in heap memory then lenght variable is intilize with some value(nothing but number of elements of array)
+   -> once object is created and lenght variable in initilized then we can not modify the array length. and thats why array is fixed in size.
+
+3) indexed base:
+    we can access or store values based on indexex of array
+    Example :
+               int arr[]= {100,2,3,4,5,6}; 
+		
+		System.out.println(arr[0]); //first ele
+		System.out.println(arr[5]);// last ele
+		System.out.println(arr[6]);//java.lang.ArrayIndexOutOfBoundsException
+
+4) store in contigous memory location:
+   -> Array elements are stored in adjacent memory locations, improving access speed (Cache Memory). 
+
+
+5) stored in heap memory:
+   -> Arrays are objects in Java and are stored in the heap memory.
+
+6) default values:
+    -> if we create array object using new keyword without initilization 
+       then default values will be initilized based on type of array.
+    -> Example :
+                int arr[]=new int[3];
+                System.out.println(Arrays.toString(arr));
+
+7) easy to retrive:
+    ->Example :
+               int arr[]={1,2,3,4};
+               System.out.println(arr[3])// 4
+
+
+Drawback of array:
+-------------------
+1) Fixed in size
+2) Insertion OR deletion at the begning or middle is O(n)
+3) No predefined method support.                   
+
+-------------------------------------------
+
+
+Category of array :
+=====================
+-> generally we are categorising array into two type for getting proper understanding on array.
+
+1) Primitive type array
+2) reference type array
+
+1) Primitive type:
+--------------------
+
+int arr[]; 
+float arr[];
+double arr[];
+short arr[];
+byte arr[];
+long arr[];
+char arr[];
+boolean arr[];
+
+2) reference type array:
+-------------------------
+a) class type array :
+b) abstract claa type array: 
+c) interface type array :
+d) Object type array:  
+
+NOTE : b,c,d we will discuss in polymorphysm concept.
+
+
+Example of class type array[homogeneous array]
+-----------------------------------------------
+package com.nit.batch51;
+
+import java.util.Arrays;
+
+class Employee
+{
+	int id;
+	String name;
+	double salary;
+	
+	//alt+shif+s+o
+	public Employee(int id, String name, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+
+	//alt+shif+s+s
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+}
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Employee e1=new Employee(111,"radha", 20000);
+		Employee e2=new Employee(222, "Raj", 84774);
+		Employee e3=new Employee(333,"Krish",94773);
+		
+		Employee arr[]=new Employee[3];
+		arr[0]=e1;
+		arr[1]=e2;
+		arr[2]=e3;
+
+//            	Approach 1 : printing array using normal for loop	
+//		for(int i=0;i<arr.length;i++)
+//		{
+//			System.out.println(arr[i]);
+//		}
+		
+
+//            	Approach 2 : printing array using for-each loop
+//		for(Employee x:arr)
+//		{
+//			System.out.println(x);
+//		}
+		
+
+//            	Approach 3 : printing array using Arrays.toString() method
+//		System.out.println(Arrays.toString(arr));
+		
+	}
+
+}
+
+
+
+
