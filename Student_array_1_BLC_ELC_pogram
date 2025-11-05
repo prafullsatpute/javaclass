@@ -1,0 +1,61 @@
+package com.array.BLC;
+
+public class StudentBLC {
+	
+	int id;
+	String name;
+	double  marks;
+	
+	public StudentBLC(int id, String name, double marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+
+	public String toString() {
+		return "StudentBLC [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+	}
+	
+
+
+}
+
+
+package com.array.ELC;
+
+import com.array.BLC.StudentBLC;
+
+public class StudentELC {
+
+	public static void main(String[] args) {
+		
+		StudentBLC arr[]=new StudentBLC[3];
+		arr[0]=new StudentBLC(101, "Ravi", 89.5);
+		arr[1]=new StudentBLC(102,"Anita",92.0);
+		arr[2]=new StudentBLC(103,"Kiran",85.75);
+		
+		for(StudentBLC s:arr) {
+			System.out.println(s);
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
