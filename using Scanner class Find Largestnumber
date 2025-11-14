@@ -1,0 +1,28 @@
+package prafull.com.raj;
+
+import java.util.Scanner;
+
+public class FindLargestNumber {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter a first number: ");
+		int a= sc.nextInt();
+		
+		System.out.print("Enter a Second number:");
+		int b=sc.nextInt();
+		
+		if(a>b)
+			System.out.print(a + "is the largest number ");
+		else if(b>a)
+			System.out.print(b+ "is the largest number");
+		else
+		  
+			System.out.println("Both are equal");
+		sc.close();
+
+	}
+
+}
