@@ -490,6 +490,7 @@ public class Test
         new X();
     }
 }
+Ans-error same con-not call
 -----------------------------------------------------------------------------------
 Q15) What will be the output of the following program?
 
@@ -554,7 +555,8 @@ public class Test
    }
 }
 
-
+Ans-Alpha class constructor 
+    bet class constructor
 -----------------------------------------------------------------------------------
 Q17) What will be the output of the following program?
 
@@ -580,6 +582,8 @@ public class Test
 	   new Beta();
    }
 }
+Ans-alpha class constructor
+    beta class constructor
 -----------------------------------------------------------------------------------
 Q18) What will be the output of the following program?
 
@@ -617,6 +621,8 @@ public class Test
 	   //new Derived(10);
    }
 }
+ANS-Base class parameterized int
+Derived class parameterized int
 -----------------------------------------------------------------------------------
 Q19) What will be the output of the following program?
 
@@ -646,6 +652,7 @@ obj.j=2;
 obj.display();
 }
 }
+ans-2
 -----------------------------------------------------------------------------------
 Q20) What will be the output of the following program?
 
