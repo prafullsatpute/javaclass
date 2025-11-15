@@ -1,0 +1,254 @@
+Create a BLC class Rectangle
+ 
+Attributes :
+
+names        datatypes
+------       ----------
+width           double-privatre
+height          double-private
+
+Implement a parameterized constructor to initialize the non static Field width and height.
+
+Methods :
+---------
+1)
+Method Name : getArea()
+Parameter : No Parameters
+Return Type : double
+Access modifier : public
+
+In this method returns the area of the rectangle.
+
+2)
+Method Name : getPerimeter()
+Parameter : No Parameters
+Return Type : double
+Access modifier : public
+
+In this method returns the perimeter of the rectangle.
+
+Note : Don't use toString() method
+
+Take one Main class ELC class which is having main method,
+Create a Rectangle object with width 5 and height 10 and call
+the getArea() and getPerimeter() methods on it.
+
+Examples
+Example 1
+Input:
+5 10
+Output:
+Area = 50.0
+Perimeter = 30.0
+Important Note
+Your code must be able to print the sample output from the provided sample input. However, your solution is also run against multiple hidden test cases. You must pass these hidden test cases to fully solve the problem.
+
+Limits
+Memory Limit: 1 MB
+Time Limit: 60 ms
+
+2>Create a class Employee (Business Logic Class)
+
+Non static Fields :
+
+employeeNumber : private-int
+employeeName : private-String
+employeeSalary:private -double
+
+Create a parameterized constructor to initialilize all the fields.
+
+Create a pair of setter and getter methods for all the Non static fields.
+
+Methods :
+---------
+1)
+Method Name : getEmployeeDesignation()
+Parameter : double salary [Here method should receive updated salary]
+Return Type : String
+Access modifier : public
+
+In this method, Take the updated salary in the parameter variable and return the employee
+designation based on the following criteria :
+
+a) If updatedSalary is  greater than 120000, return Employee is a HR Manager.
+b) If updatedSalary is greater than 90000, return Employee is a Developer.
+c) If updatedSalary is greater than 60000, return Employee is a Designer.
+d) In the else part, return Employee is a Tester.
+
+Take toString() method to print Employee Object properties.
+
+
+Create an ELC class EmployeeDemo which contains main method, with the help of Scanner class take the input from the user to initialize the non static field through parameterized constructor.
+
+Print the employee details using toString() method.
+
+Take the salary increment amount from the user using Scanner class, update the employee
+salary using setter and getter.
+
+Print the employee data with updated salary.
+
+Pass this updated salary to getEmployeeDesignation() method to get and print the 
+Employee Designation as per below output.
+
+Examples
+Example 1
+Input:
+101
+Ravi
+80000
+10000
+Output:
+Updated Salary = 90000.0 → Employee is a Developer
+
+
+
+
+Person (Base Class)
+Represents a generic person with basic information.
+
+Instance Variables:
+
+name (String)
+
+id (int)
+
+Constructor:
+
+Initializes name and id.
+
+🔹 Student (Inherits from Person)
+Represents a student with academic effort tracking.
+
+Instance Variables:
+
+hardWorkScore (int) → (0–100)
+
+taskCompleted (int) → (number of assignments out of 10)
+
+Constructor:
+
+Calls super() and initializes additional fields.
+
+🔹 PlacementCandidate (Inherits from Student)
+Represents a final-year student evaluated for placement.
+
+Instance Variables:
+
+classAttendance (double) → percentage (0–100)
+
+labAttendance (double) → percentage (0–100)
+
+Constructor:
+
+Uses constructor chaining to initialize all fields.
+
+Method:
+
+void evaluateCandidate(int choice):
+
+menu using switch-case or if else :
+
+1.Show all scores
+
+2.Calculate placement probability
+
+3.Show eligibility status (based on thresholds)
+
+4.Exit
+
+Placement Probability Logic:
+
+probability = (hardWorkScore * 0.3 + taskCompleted * 5 + classAttendance * 0.2 + labAttendance * 0.2)
+
+[Note :----
+
+Eligibility Rules:
+
+Hard work score ≥ 70
+
+Task completed ≥ 7
+
+Class & Lab attendance ≥ 75%
+]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3>Take an ELC class StudentTracker and instantiate the PlacementCandidate and invoke the evaluateCandidate method .
+
+
+Sample Input :
+-------------------
+
+Name: virat
+ID: 101
+HardWorkScore: 85
+TaskCompleted: 9
+ClassAttendance: 80.0
+LabAttendance: 85.0
+
+
+Sample Output :
+---------------------
+Candidate: VIRAT (ID: 101)
+
+=== Placement Evaluation Menu ===
+
+1. View All Scores
+2. Check Placement Probability
+3. Check Placement Eligibility
+4. Exit
+------------------------
+Enter your choice: 1
+
+Hard Work Score: 85
+Tasks Completed: 9/10
+Class Attendance: 80.0%
+Lab Attendance: 85.0%
+
+------------------------
+Enter your choice: 2
+
+ Estimated Placement Probability: 92.5%
+
+------------------------
+Enter your choice: 3
+
+You are ELIGIBLE for placement!
+
+------------------------
+Enter your choice: 4
+Exiting...
+
+Examples
+Example 1
+Input:
+virat
+101
+85
+9
+80.0
+85.0
+1
+Output:
+Hard Work Score: 85
+Tasks Completed: 9/10
+Class Attendance: 80.0%
+Lab Attendance: 85.0%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
