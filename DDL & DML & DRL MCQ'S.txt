@@ -14,7 +14,7 @@ c) indexes
 d) All of the above
 
 
-Answer: 
+Answer: d>all of the above
 
 
 ------------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ c) Deletes selected rows with WHERE clause
 d) Drops only column data
 
 
-Answer: 
+Answer: b>removes all rows but keeps the structure
 
 ------------------------------------------------------------------------------------------------------
 3.Which statement is true about ALTER TABLE?
@@ -43,7 +43,7 @@ c) It is used only for constraint creation
 d) It cannot modify column data types
 
 
-Answer: 
+Answer: b) It can add, drop, or modify table columns
 
 ------------------------------------------------------------------------------------------------------
 4.The DDL command to remove a table including its structure is:
@@ -57,7 +57,7 @@ c) DROP
 d) CLEAR
 
 
-Answer: 
+Answer: c) DROP
 
 ------------------------------------------------------------------------------------------------------
 5.What is the full form of DDL command
@@ -71,7 +71,7 @@ c) Data delegating language
 d) Dummy data language
 
 
-Answer: 
+Answer: b) Data definition language
  
 
 ------------------------------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ c) DROP TABLE
 d) ALTER TABLE
 
 
-Answer:- 
+Answer:- b) INSERT INTO
 
 ------------------------------------------------------------------------------------------------------
 7.UPDATE emp SET salary = salary * 1.1; belongs to which category?
@@ -100,7 +100,7 @@ c) DML
 d) TCL
 
 
-Answer: 
+Answer: c) DML
 
 ------------------------------------------------------------------------------------------------------
 8.Which DML statement is used to remove specific rows from a table?
@@ -114,7 +114,7 @@ c) DROP
 d) ALTER
 
 
-Answer: 
+Answer: a) DELETE
 
 ------------------------------------------------------------------------------------------------------
 9.Which of the following DML commands cannot use a WHERE clause?
@@ -128,7 +128,7 @@ c) UPDATE
 d) None of the above
 
 
-Answer: 
+Answer: b) INSERT
 
 ------------------------------------------------------------------------------------------------------
 10.Which command is used to change the structure of an existing table?
@@ -142,7 +142,7 @@ c) MODIFY
 d) UPDATE
 
 
-Answer: 
+Answer: b) ALTER
 
 -----------------------------------------------------------------------------------------------------
 11.What is the result of the following statement: 
@@ -158,7 +158,7 @@ c) Drops all data from employees table
 d) Drops all columns except salary
 
 
-Answer: 
+Answer: b) Drops the salary column from employees table
 
 ------------------------------------------------------------------------------------------------------
 12.Which command would you use to change the datatype of a column in a table?
@@ -172,7 +172,7 @@ c) UPDATE TABLE
 d) RENAME COLUMN
 
 
-Answer: 
+Answer: a) ALTER TABLE MODIFY
 
 ------------------------------------------------------------------------------------------------------
 13.What is the main difference between DROP and TRUNCATE commands?
@@ -187,6 +187,7 @@ d) TRUNCATE is slower than DROP
 
 
 Answer:
+b) DROP removes structure and data, TRUNCATE removes only data
 
 ------------------------------------------------------------------------------------------------------
 14.Which of the following is a DDL command in oracle SQL ?
@@ -200,7 +201,7 @@ c)CREATE
 d)UPDATE
 
 
-Answer: 
+Answer: c)CREATE
 ------------------------------------------------------------------------------------------------------
 15.Which of the following is a DML command ?
 
@@ -213,7 +214,7 @@ c)DROP
 d)ALTER
 
 
-Answer: 
+Answer: a)DELETE
 ------------------------------------------------------------------------------------------------------
 16.Which command is used to modify existing data in a table ?
 
@@ -225,7 +226,7 @@ c)UPDATE
 
 d)ALTER
 
-Answer: 
+Answer: d)ALTER
 
 ------------------------------------------------------------------------------------------------------
 17.In SQL, which of the following is not a data Manipulation Language Commands?
@@ -239,7 +240,7 @@ c) Update
 d) Merge
 
 
-Answer: 
+Answer: b) Truncate	
 ------------------------------------------------------------------------------------------------------
 18.Which of the following is not a DDL command?
 
@@ -252,7 +253,7 @@ c) TRUNCATE
 d) UPDATE
 
 
-Answer: 
+Answer: d) UPDATE
 ------------------------------------------------------------------------------------------------------
 19.Which statement is used to retrieve data  from a table ?
 
@@ -265,7 +266,7 @@ c)FETCH
 d)SHOW
 
 
-Answer: 
+Answer: a)SELECT
 ------------------------------------------------------------------------------------------------------
 19.What is the syntax for creating a table?
 
@@ -278,7 +279,8 @@ c) CREATE TABLE VALUES [schema.] table (column datatype [DEFAULT expr] [,..] );
 d) None of the above
 
 
-Answer: 
+Answer: d) None of the above
+
 -----------------------------------------------------------------------------------------------------
 20.What is Functionality of TRUNCATE Command?
 
@@ -291,7 +293,8 @@ c) It Deletes Specified Records Temporarily
 d) It Deletes All Records Permanently
 
 
-Answer: 
+Answer: d) It Deletes All Records Permanently
+
 
 ------------------------------------------------------------------------------------------------------
 21.Whcih SQL Sub-Language commands contains AUTO COMMIT
@@ -305,7 +308,7 @@ c) Both DDL & DML
 d) DRL
 
 
-Answer: 	
+Answer: 	b) DDL	
 ------------------------------------------------------------------------------------------------------
 22.Select * from employee where salary>10000 and dept_id=101;
 
@@ -320,7 +323,8 @@ c) Salary
 d) All the field of employee table
 
 
-Answer: 
+Answer:d) All the field of employee table
+
 ------------------------------------------------------------------------------------------------------
 23. Which of the following statements contains an error?
 
@@ -333,7 +337,7 @@ c) Select empid from emp where empid = 10006;
 d) Select empid from emp;
 
 
-Answer: 
+Answer: a) Select empid where empid = 1009 and lastname = 'GELLER';
 ------------------------------------------------------------------------------------------------------
 24.Which statement is true about DELETE and TRUNCATE
 
@@ -346,7 +350,7 @@ c) TRUNCATE fires DELETE triggers
 d) DELETE REMOVES table structure
 
 
-Answer: 
+Answer: b) DELETE can be rolled, TRUNCATE can not
 ------------------------------------------------------------------------------------------------------
 25.Consider the following Instructor table with the following 4 columns
 
@@ -367,7 +371,7 @@ c) Insert into Instructor values ('5', 'SURYA');
 d) Insert into Instructor (Id, Name) values (5, 'SURYA');
 
 
-Answer: 
+Answer: d) Insert into Instructor (Id, Name) values (5, 'SURYA')
 
 ------------------------------------------------------------------------------------------------------
 26.How can you change LastName "Thomas" to "Michel" in the Users table?
@@ -381,7 +385,7 @@ c) MODIFY Users SET LastName = 'Thomas' INTO LastName = 'Michel';
 d) UPDATE Users SET LastName = 'Michel' WHERE LastName = 'Thomas';
 
 
-Answer:
+Answer:d) UPDATE Users SET LastName = 'Michel' WHERE LastName = 'Thomas';
 ------------------------------------------------------------------------------------------------------
 27.The command to eliminate a table from a database
 
@@ -394,7 +398,8 @@ c) DROP TABLE CUSTOMERS;
 d) UPDATE TABLE CUSTOMERS;
 
 
-Answer: 
+Answer: c) DROP TABLE CUSTOMERS;
+
 
 ------------------------------------------------------------------------------------------------------
 28.What does the following code snippet do ?
@@ -411,20 +416,22 @@ d) None of the above
 
 
 Answer: 
+a) Adds a column called ADDRESS in the table student
 
 ------------------------------------------------------------------------------------------------------
 29.Which datatype accepts IMAGES, AUDIO FILES, VIDEO FILES
 
 a) NUMBER
 
-b) TIMESTAMP
+b) TIMESTA
 
-C) BLOB
+
+C)
 
 d) VARCHAR2
 
 
-Answer: 
+Answer: c
 ------------------------------------------------------------------------------------------------------
 30.Which of the following commands can be used to rename a table in Oracle?
 
@@ -436,5 +443,6 @@ c) ALTER
 
 d) UPDATE
 
-Answer: 
+Answer: c) ALTER
 ------------------------------------------------------------------------------------------------------
+
