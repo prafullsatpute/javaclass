@@ -13,6 +13,9 @@ B.	fasle true
 C.	true true
 D.	false false
 
+Ans--C.	true true
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 2.What is the output of the following program
 public class StringHandling {
@@ -28,6 +31,9 @@ B.	16
 C.	14
 D.	17
 
+ANS=16
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 3.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -37,6 +43,8 @@ public class StringHandling {
 }
 A.	true
 B.	false
+ANS=
+=======================================================================================================================================================================================
 
 4.Choose the correct output of the following snippet 
 public class StringHandling {
@@ -49,6 +57,8 @@ B.	In line 1 create one object and one reference variable
 C.	In line 1 create two objects and two  reference variable
 D.	In line 1 create one objects and two reference variable
 
+ANS=B.	In line 1 create one object and one reference variable
+=================================================================================================================================================================================
 5.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -61,6 +71,8 @@ B.	NarEsh
 C.	Naresh I Technologies
 D.	NarEsh I TEchnologiEs
 
+ANS=A.	NarEsh I Technologies
+==================================================================================================================================================
 6.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -73,7 +85,8 @@ A.	WelcomeNareshIT
 B.	Welcome
 C.	Welcome NareshIT
 D.	NareshIT
-
+ANS=C.	Welcome NareshIT
+==================================================================================================================================================================================
 7.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -85,7 +98,8 @@ A.	NareshIT 10
 B.	Compile time error
 C.	NareshIT10
 D.	Run time error
-
+Ans=C.	NareshIT10  
+================================================================================================================================================================================================================
 8.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -99,7 +113,8 @@ A.	true false
 B.	false true
 C.	true true
 D.	false false
-
+ANS=B.	false true
+=========================================================================================================================================================================================================
 9.What is the output of the following program
 public class StringHandling {
 	public static void main(String[] args) {
@@ -113,7 +128,8 @@ A.	true false
 B.	false true
 C.	true true
 D.	false false
-
+ANS=C.	true true
+============================================================================================================================================================================================
 10.Choose the correct output of the following snippet
 public class StringHandling {
 	public static void main(String[] args) 
@@ -128,6 +144,9 @@ B. banana
 C. orange
 D. ,banana
 
+ans=B. banana
+==========================================================================
+
 11.Choose the correct option for the following program
 public class StringHandling {
 	public static void main(String[] args) 
@@ -140,7 +159,8 @@ A. 3
 B. 4
 C. 2
 D. 1
-
+ans=A=3
+=================================================================
 12.Choose the correct option for the following snippet
 public class StringHandling {
 	public static void main(String[] args) 
@@ -153,7 +173,9 @@ A. "Java Programming"
 B. " Java Programming "
 C. "Java Programming "
 D. Compilation error
+ANS= "Java Programming"
 
+==================================================================
 13.Which Exception raise for the following snippet
 public class StringHandling {
 	public static void main(String[] args) {
@@ -165,7 +187,8 @@ A.	StringIndexOutOfBoundsException
 B.	ArrayIndexOutOfBoundsException
 C.	IndexOutOfBoundsException
 D.	StringOutOfBoundsException
-
+ANS=B.A.	StringIndexOutOfBoundsException
+====================================================================
 14.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -177,7 +200,8 @@ A.	T
 B.	s
 C.	I
 D.	h
-
+ANS=c-I
+==========================================================================================
 15.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -189,7 +213,8 @@ A.	T
 B.	s
 C.	J
 D.	o
-
+ANS=B-S
+=====================================================================================
 16.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -204,7 +229,8 @@ A.	Compile time error
 B.	Run time error
 C.	N a r e s h   I   T e c h n o l o g i e s   J a v a
 D.	NareshITechnologiesJava
-
+ANS=B.	Run time error
+==============================================================================
 17.Choose the correct output of the following snippet
 public class StringHandling {
 	public static void main(String[] args) {
@@ -220,7 +246,8 @@ A.	Compile time error
 B.	Run time error
 C.	N a r e s h   I   T e c h n o l o g i e s   J a v a
 D.	NareshITechnologiesJava
-
+ANS=D-NareshITechnologiesJava
+====================================================================================================
 18.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) {
@@ -234,7 +261,8 @@ A.	5 19 31
 B.	6 19 32
 C.	4 18 30
 D.	4 18 31
-
+ANS=A.	5 19 31
+==========================================================================================
 19.What is the output of the following code
 public class StringHandling {
 	public static void main(String[] args) 
@@ -247,7 +275,8 @@ A. true
 B. false
 C. Compilation error
 D. Runtime exception
-
+ANS-A. true
+=============================================================================================================
 20.Choose the correct output of the following snippet
 public class StringHandling {	
 	public static void main(String[] args) {
@@ -261,8 +290,4 @@ B.	20 21
 C.	21 1
 D.	20 20
 
-Batch_51_Assignment.txt
-Displaying Batch_51_Assignment.txt.
-String Basic MCQ
-Ravi Shankar
-•
+ANS=21 1
