@@ -85,7 +85,7 @@ A.	WelcomeNareshIT
 B.	Welcome
 C.	Welcome NareshIT
 D.	NareshIT
-ANS=C.	Welcome NareshIT
+ANS=C.Welcome NareshIT
 ==================================================================================================================================================================================
 7.What is the output of the following program
 public class StringHandling {
