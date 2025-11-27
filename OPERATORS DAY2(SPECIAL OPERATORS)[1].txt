@@ -1,0 +1,374 @@
+                          SPECIAL OPERATORS
+                         ====================
+
+1.In:- It is used to pick the values one by one
+=====        from list of values.
+ 
+
+        We can also use in operator in place of OR operator.
+when we are retrieving multiple values from the same column.
+in this case In operator performance is very high compare to
+OR operator.
+ 
+
+•it avoids writing multiple equality conditions using OR operator.
+
+
+Syntax:- 
+=======
+select * from table name
+where columnname in(list of values);
+
+
+
+1.Write a query to display the employees who are belongs to 20,30,50,70,90 departments from
+  emp table by using in operator.
+
+ANSWER==============================================================================
+
+
+SQL> SELECT *FROM EMP WHERE DEPTNO IN (20,30,50,70,90);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500        500         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+
+2.Write a query to display whose enames are SMITH,JONES,KING from emp table
+  by using in operator?
+
+ANSWER======================================================================
+
+
+SQL> SELECT *FROM EMP WHERE  ENAME IN('SMITH','JONES','KING');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+
+3.Write a query to display the employee records whose employee numbers
+  are 7902,7788,7900 from emp table by using in operator?
+
+ANSWER=============================================
+
+SQL> SELECT *FROM EMP WHERE  EMPNO IN(7902,7788,7990);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+
+4.Write a query to display the employee records whose salary is 1250,3000,5000
+  from emp table?
+
+ANSWER================================================================
+SQL> SELECT *FROM EMP WHERE  SAL IN(1250,3000,5000);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+
+5.Write a query to display the employee records except MANAGER and CLERK 
+  from emp table?
+
+ANSWER===============================================
+
+SQL> SELECT *FROM EMP WHERE  JOB IN('MANAGER','CLERK');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+
+
+
+6.Write a query to display the employees who are belongs to other than 10,20
+  from emp table?
+
+ANSWER=============================================
+
+
+SQL> SELECT *FROM EMP WHERE  DEPTNO NOT IN(10,20);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500        500         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+------------------------------------------------------------------------------------------------------
+                    2.Between And operator
+                    ======================
+2)Between:-This operator is used to retrieve range of values from a table column.
+========== This operator is also called as between.... and operator.
+
+
+Syntax:- 
+========
+Select * from tablename 
+where columnname between lowvalue and highvalue.
+
+
+
+1.Write a query to display the employees who are getting salary 
+         between 2000 to 5000 from emp table 
+              by using Between operator? 
+
+ANSWER==================================================================================
+
+
+
+SQL> SELECT *FROM EMP WHERE  SAL BETWEEN 2000 AND 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+2.Write a query to display the employees who are getting salary 
+        not between 2000 - 5000 from emp table
+              by using Between operator?
+
+ANSWER==================================================
+
+
+
+SQL> SELECT *FROM EMP WHERE  SAL NOT BETWEEN 2000 AND 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500        500         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ 
+3.Write a query to display the employee records who joined in 1982 from emp table?
+ANSWER=================================================
+
+SQL> SELECT *FROM EMP WHERE  HIREDATE  BETWEEN '01-JAN-1982' AND '31-DEC-1982';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+
+
+4.Write a query to display the employee records except joined in 1981 from emp table?
+
+ANSWER=================================================
+
+SQL> SELECT *FROM EMP WHERE  HIREDATE NOT BETWEEN '01-JAN-1981' AND '31-DEC-1981';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+
+ *
+*5* What is the output of the following statement?
+ *
+    SQL>select * from emp where sal between 4000 and 2000;
+
+a) it returns who are getting the salaries from 4000 to 2000
+
+b) it returns who are getting the salaries from 2000 to 4000
+
+c) No rows selected
+
+d) both A and B
+
+
+Answer: c) No rows selected
+
+-----------------------------------------------------------------------------------
+
+                   3.is null and is not null
+                    =========================
+
+3) Is null, is not null:- These two operators used in where clause only.
+========================= These two operators are used to test weather a column
+                          having null values or not.
+
+
+•For null comparision we must use is null or is not null operators. 
+ don't use = operator.
+
+
+Syntax:-
+========
+ select * from tablename where columnname is null;
+
+
+Syntax:-
+=======
+ select * from tablename where columnname is not null;
+
+
+   
+1.Write a query to display the employees who are not getting commission
+  from emp table? 
+
+ANSWER==================================
+
+SQL> SELECT *FROM EMP  WHERE COMM  IS NULL;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+
+
+
+2.Write a query to display the employees who are getting commission
+   from emp table? 
+
+ANSWER=================================
+
+
+SQL> SELECT *FROM EMP  WHERE COMM IS NOT NULL;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500        500         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+
+
+
+3.Write a query to display the employee record who are not having the manager
+  from emp table?
+
+ANSWER==========================================
+
+
+SQL> SELECT *FROM EMP  WHERE  MGR IS NULL;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+
+
