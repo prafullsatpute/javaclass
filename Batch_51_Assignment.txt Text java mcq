@@ -1,0 +1,406 @@
+
+07:52
+100 points
+Batch_51_Assignment.txt
+Text
+
+Class comments
+Your work
+Assigned
+Private comments
+Assignment 01:
+--------------
+Create a program on abstract class to display Cake details with message and without
+event message.
+
+Coding Requirements :
+--------------------
+Create a BLC class called Cake with following attributes :
+
+Attributes/Properties/Fields: [Access modifier is private for all the fields]
+
+Attribute Name : shape String
+Attribute Name :flavor String
+Attribute Name :quantity int
+public static double price = 400;
+
+Create a Parameterized Constructor to initialize only shape, flavor and quantity.
+[Don't initialize price through Constructor, Manual Initialization]
+
+Methods :
+  1) Define setters and getters for all non static fields
+  2) Name of the method : toString()
+     Return Type : String
+     Modifier : public.
+     Task : It must return the data as per below format/example.
+     "A Round Chocolate Cake Of 4 KG is Ready @ Rs.1600.0"
+     
+Create an inherited class "OrderedCake". Inherit this from "Cake"
+Define the following Attributes
+Attributes: [private for all the fields]
+Attribute name : message String
+
+Constructors:(3 only)
+   1) No argument Constructor : Ensure shape is Round, flavour is Vanilla,
+      qty is 1 kg and price is 400. [see the output test cases]
+   2) Parameterized public Constructor : For shape,flavor,quantity
+   3) Parameterized public Constructor : For shape,flavor,quantity and message.
+   Price is to be dynamically changed @400 per Kg.
+Methods :
+Name of the method : toString()
+     Return Type : String
+     Modifier : public.
+     Task :Print the following if message is not null 
+    "A Square Pineapple Cake of 3KG is Ready with Happy Birthday message @ Rs.1200.0".
+      Otherwise display the message from superclass.
+      
+      
+Create an ELC class CakeOrder to display cake details with price and message.
+
+Test Cases for Output :
+------------------------
+A Round Vanila Cake Of 1 KG is Ready @ Rs.400.0
+A Round Chocolate Cake Of 4 KG is Ready @ Rs.1600.0
+A Square Pineapple Cake Of 3KG is Ready with Happy Birthday message @ Rs.1200.0
+
+==========================================================================================
+MCQ on abstract Method and OL, OR :
+---------------------------------------
+Q1)
+abstract class A 
+{
+    abstract void show();
+    void display() 
+    {
+        System.out.println("Display in A");
+    }
+}
+
+abstract class B extends A 
+{
+    void display() 
+    {
+        System.out.println("Display in B");
+    }
+}
+
+class C extends B 
+{
+    void show()
+    {
+        System.out.println("Show in C");
+    }
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
+        A obj = new C();
+        obj.display();
+        obj.show();
+    }
+}
+
+ANS:"Display in B
+    ("Show in C)
+-------------------------------------------------------------------
+Q2)
+
+abstract class Animal 
+{
+    abstract void sound();
+    void sleep() 
+    {
+        System.out.println("Sleeping...");
+    }
+}
+
+abstract class Dog extends Animal
+{
+    
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+ANS=error
+-----------------------------------------------------------------------
+Q3)
+
+abstract class A 
+{
+    abstract void m1();
+}
+
+abstract class B extends A 
+{
+    void m1() 
+    {
+        System.out.println("B m1");
+    }
+}
+
+class C extends B 
+{
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
+        C obj = new C();
+        obj.m1();
+    }
+}
+
+ANS=("B m1
+-----------------------------------------------------------------------
+Q4)
+
+public class Test
+{
+ public static void main(String[] args)
+{
+    B b = new C();
+    A a = b;
+    if (a instanceof A) System.out.println("A");
+    if (a instanceof B) System.out.println("B");
+    if (a instanceof C) System.out.println("C");
+    if (a instanceof D) System.out.println("D");
+  }
+}
+
+class A {}
+class B extends A {}
+class C extends B {}
+class D extends C {}
+
+ANS=ABC
+----------------------------------------------------------------------
+Q5)
+
+class C 
+{
+}
+class D extends C
+{
+}
+class A
+{
+public C getOBJ()
+{
+System.out.println("class A - return C");
+return new C();
+}
+}
+class B extends A
+{
+public D getOBJ()
+{
+System.out.println("class B - return D");
+return new D();
+}
+}
+public class Test31
+{
+public static void main(String... args) 
+{
+     A a = new B();
+     a.getOBJ();
+}
+}
+ANS=class A - return C
+----------------------------------------------------------------------
+Q6)
+class First 
+{
+public Object method1()
+{
+System.out.println("super method1");
+return new String("Base");
+}
+}
+
+class Second extends First 
+{
+public String method1() 
+{
+System.out.println("Subclass method1");
+return new String("Derived");
+}
+}
+
+class Test20
+{
+public static void main(String[] args)
+{
+First f = new Second();
+String s = f.method1();
+}
+
+}
+
+ANS=Subclass method1
+---------------------------------------------------------------------
+Q7)
+
+class Vehicle 
+{
+    public void printSound() 
+    {
+        System.out.println("vehicle");
+    }
+}
+
+class Car extends Vehicle 
+{
+    public void printSound() 
+    {
+        System.out.println("car");
+    }
+}
+
+class Bike extends Vehicle
+{
+    public void printSound()
+    {
+        System.out.println("bike");
+    }
+}
+
+public class Test
+{
+    public static void main(String[] args) 
+    {
+        Vehicle v = new Car();
+        Car c = (Car) v;
+        
+        v.printSound();
+        c.printSound();
+    }   
+}
+Ans=car car
+--------------------------------------------------------------------
+Q8)
+
+class Base
+{
+    String s = "Base";
+    String show()
+	{
+       return s;
+    }
+}
+class Derived extends Base
+{
+  String s = "Derived";
+}
+public class Test8 
+{
+  void print(Base b)
+  {				  
+    System.out.println(b.show());
+  }
+  void print(Derived d)
+  {
+    System.out.println(d.show());
+  }
+  public static void main(String[] args)
+  {
+              Test8 t = new Test8();
+              Base b = new Derived();
+              t.print(b);
+  }
+}
+ANS=(Base b
+----------------------------------------------------------------------
+Q9)
+
+abstract class Parent 
+{
+    abstract void m1();
+    abstract void m2();
+}
+
+abstract class Child extends Parent
+{
+    void m1() 
+    {
+        System.out.println("Child m1");
+    }
+}
+
+class SubChild extends Child 
+{
+    void m2() 
+    {
+        System.out.println("SubChild m2");
+    }
+}
+
+public class Test 
+{
+    public static void main(String[] args) 
+    {
+        Parent p = new SubChild();
+        p.m1();
+        p.m2();
+    }
+}
+ANS=Child m1
+  SubChild m2
+
+----------------------------------------------------------------------
+Q10)
+
+class Test12
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("M");
+		Alpha.val=100;
+		System.out.println("F");
+		Alpha a = new Alpha();
+	}
+}
+class Beta
+{
+	static 
+	{
+		System.out.println("Q");
+		
+	}
+	Beta()
+	{
+		System.out.println("D");
+	}
+}
+class Alpha extends Beta
+{
+	static int val;
+	static 
+	{
+		System.out.println("W");
+		val=1000;
+	}
+	
+	Alpha()
+	{
+		System.out.println("C");
+	}
+
+	static 
+	{
+		System.out.println("R");
+		val=1000;
+	}
+}
+ANS=MQWRFDC
+----------------------------------------------------------------------
+
