@@ -1,0 +1,116 @@
+                               DATE CONVERSION FUNCTIONS
+                             ============================
+
+1)to_char():-it is used to convert oracle date type into character type.
+
+
+EX:-
+===
+SQL> select to_char(sysdate,'DAY MONTH YYYY') from dual;
+
+TO_CHAR(SYSDATE,'DAYMONTHYYYY')
+-------------------------------
+THURSDAY  DECEMBER  2025
+
+
+SQL> select to_char(sysdate,'day')from dual;
+
+TO_CHAR(SYSDATE,'DAY')
+------------------------
+thursday
+       
+-----------------------------------------------------------------------------------------------------  
+1.Write a query to display the employees who are joining in the year 1981
+  from emp table using to_char()?
+
+
+
+2.Write a query to display employee names,Hiredate and 4 digit year from emp table
+  by using to_char()?
+
+EXCEPTED OUTPUT:-
+===============
+
+   ENAME      HIREDATE       YEAR
+ --------    ----------     ------   
+  SMITH       17-DEC-80      1980
+  ALLEN       20-FEB-81      1981
+  -----        -------       ----
+  -----        -------       ----
+  -----        -------       ----
+  MILLER      23-JAN-82      1982
+
+
+
+3.Write a query to display the employees who are joining in the month DECEMBER
+  from emp table by using to_char() month format?
+
+
+NOTE:-Whenever we are using to_char() DAY format also oracle
+      server internally allocates maximum 9 bytes for DAY field.
+whenever passed DAY having less number of bytes then oracle server
+does not return any rows.To overcome this problem then we must use
+fm(fill mode).
+
+
+
+4.Write a query to display the employees records who are joined in 1980,1982,1984
+  from emp table by using to_char()?
+
+
+
+5.Write a query to display the employees who are joining in the month FEBRUARY
+  from emp table by using to_char() MM format ?
+
+
+
+6.Write a query to display the employees who are joining in JAN,MAR,DEC months
+  from emp table by using to_char()?
+
+
+
+7.Write a query to display the employees who are joining in 1981 DECEMBER 
+  from emp table by using to_char()?
+
+
+
+8.Write a query to display the employees who are joining in 1st and 4th quarter 
+  from emp table by using to_char()?
+
+
+
+9.Write a query to display the employees who joined in 1st quarter of 1981
+  from emp table by using to_char()?
+
+
+
+
+10.Write a query to display employee names,hiredate and DAY of join(which day they are join) 
+   from emp table?
+
+
+
+11.Write a query to display the employees who are joining on SUNDAY from emp table?
+
+
+
+12.Write a query to display the employees who are joining before 15th of every month 
+   from emp table using to_char()?
+
+
+
+13.Write a query to display the employee records who are joined in leap year
+   from emp table?
+
+
+
+14.Write a query to display the emplloyee records along with hiredates
+   and display the hiredates in INDIA date formatt[DD/MM/YYYY]?
+
+
+
+15.Write a query to display the emplloyee records along with hiredates
+   and display the hiredates in US date formatt[MM/DD/YYYY]?
+
+
+
