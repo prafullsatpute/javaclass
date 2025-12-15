@@ -1,0 +1,213 @@
+                             Group by & Having
+                           ====================
+
+
+HAVING Clause:- After group by clause we are not allowed to use where
+=============   clause. In place of this one ANSI/ISO SQL provided
+                another clause having.
+               
+Generally if we want to restrict the rows in a table then we are using 
+where clause whereas if we want to restrict groups after group by
+then we must use having clause.
+
+Generally we are not allowed to use group functions in where clause 
+whereas we can also use group functions in having clause.
+
+
+
+1.Write a query to display those departments having more than 3 employees 
+  from emp table?
+
+
+
+
+2.Write a query to display the state from PERSON table which are having
+  more than 3 employees ?[INTERVIEW QUESTION]
+
+
+
+
+3.Write a query to display those departments sum(sal) more than 9000
+   from emp table by using group by clause?
+
+
+
+4.Write a query to display those departments average salary more than
+  2000 from emp table ?
+
+                         (or)
+
+  Write a query to display each departments average salary, but show only departments
+  whose average salary is greater than 2000.
+
+
+
+
+ * *
+* 5 *Write a query to display duplicate records from the
+ * * following EMP111 table ?(V.V.I.M.P)
+
+SQL>select * from EMP111;
+
+       EMPNO        ENAME
+    ---------    ----------
+         1         SURYA
+         2         ANUSHKA
+         3         ANUSHKA
+         4         GOWTHAM
+         5         SURYA
+         6         SATYA
+
+
+
+
+  *
+* 6 *.Write a query to display year, no of employees per year 
+  *   in which year more than one employee was hired from 
+            emp table using group by?
+
+
+
+
+7.Write a query display LastName and the sum of Age from the emp333 table
+  for all users with a LastName='Smith'.The column title of the summed ages
+  should be SUMAGE.
+
+your output should look like the following[Helical IT Solutions Pvt.Ltd INTERVIEW QUESTION] 
+
+EXPECTED OUTPUT:-
+================
+
+           LASTNAME        SUMAGE
+          ----------     ---------
+            Smith            47
+
+
+COGNIZANT Latest Interview Question:-
+===================================
+8.Write a SQL query to get the average review ratings for every product every month.
+
+in a recent Amazon data analyst interview, the candidate was given the reviews table,
+and asked to write a SQL query to get the average stars for each product every month
+
+The output should include the month in numerical value, product id, and average star rating
+rounded to two decimal places. Sort the output based on month followed by the product id.
+
+REVIEW_ID     USER_ID      SUBMIT_DATE       PRODUCT_ID     STARS
+--------     --------     ------------      -----------    ------
+ 6171           123        08-JUN-2022        50001          4
+ 7802           265        10-JUN-2022        69852          4
+ 5293           362        18-JUN-2022        50001          3
+ 6532           192        26-JUL-2022        69852          3
+ 4517           981        05-JUL-2022        69852          2
+
+
+EXPECTED OUTPUT:-
+---------------
+
+ MTH      PRODUCT          AVG_STARS
+------    ------------     ---------
+  6         50001             3.5      
+  6         69852             4
+  7         69852             2.5
+
+
+------------------------------------------------------------------------------------------------------
+ *
+***What are the differences b/w Where and Having clause?(V.V.I.M.P)
+ *
+-----------------------------------------------------------------------------------
+               Where                   |                  Having
+-----------------------------------------------------------------------------------
+1.Where clause is used to restricting  |1.Having clause is used to restricting 
+  the rows in a table                  |  the groups after group by.
+                                       |
+2.It filters the rows                  |2.It filters the groups
+                                       |
+3.We are not allowed to use group      |3.We can also use group functions in
+  functions in where clause.           |  having clause.
+                                       | 
+4.Where clause is executed before      |4.Having clause executed after
+  group by.                            |  group by.
+                                       |
+5.We can also use Where clause         |5.We can not use Having clause
+  with out group by                    |  with out group by
+                                       |    
+-----------------------------------***END***---------------------------------------
+
+
+------------------------------------------------------------------------------------------------------
+
+DROP TABLE TEST;
+DROP TABLE EMP111;
+DROP TABLE REVIEWS;
+
+
+
+CREATE TABLE TEST
+(
+DEPTNO NUMBER(10)
+);
+
+INSERT INTO TEST VALUES(10);
+INSERT INTO TEST VALUES(10);
+INSERT INTO TEST VALUES(10);
+INSERT INTO TEST VALUES(20);
+INSERT INTO TEST VALUES(20);
+INSERT INTO TEST VALUES(20);
+INSERT INTO TEST VALUES(30);
+INSERT INTO TEST VALUES(30);
+INSERT INTO TEST VALUES(40);
+INSERT INTO TEST VALUES(50);
+
+
+CREATE TABLE EMP111
+(
+EMPNO NUMBER(10),
+ENAME VARCHAR2(10)
+);
+
+INSERT INTO EMP111 VALUES(1,'SURYA');
+INSERT INTO EMP111 VALUES(2,'ANUSHKA');
+INSERT INTO EMP111 VALUES(3,'ANUSHKA');
+INSERT INTO EMP111 VALUES(4,'GOWTHAM');
+INSERT INTO EMP111 VALUES(5,'SURYA');
+INSERT INTO EMP111 VALUES(6,'SATYA');
+
+
+
+CREATE TABLE REVIEWS (
+REVIEW_ID NUMBER(10),
+USER_ID NUMBER(10),
+SUBMIT_DATE DATE, 
+PRODUCT_ID NUMBER(10),
+STARS NUMBER(10)
+);
+
+
+INSERT INTO REVIEWS VALUES (6171, 123, '06-JUN-22', 50001, 4);
+INSERT INTO REVIEWS VALUES (7083, 265,  '10-JUN-22', 69852, 4);
+INSERT INTO REVIEWS VALUES (5293, 362,  '18-JUN-22', 50001, 3);
+INSERT INTO REVIEWS VALUES (6532, 192,  '26-JUL-22', 69852, 3);
+INSERT INTO REVIEWS VALUES (4517, 981,  '05-JUL-22', 69852, 2);
+
+commit;
+
+SELECT * FROM PERSON;
+
+SELECT * FROM PERSONS;
+
+SELECT * FROM TEST;
+
+SELECT * FROM EMP111;
+
+SELECT * FROM EMP222;
+
+SELECT * FROM TERRITORY;
+
+SELECT * FROM EMP333;
+
+SELECT * FROM REVIEWS;
+
+
+
