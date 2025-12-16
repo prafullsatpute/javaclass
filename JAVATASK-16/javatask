@@ -1,0 +1,254 @@
+
+Class comments
+Your work
+Assigned
+Private comments
+11.By using FunctionalInterface annotation following code is correct or not?
+@FunctionalInterface
+interface NIT
+{
+	String myInterface(String a);
+	default void nit() 
+	{
+		
+	}
+	default int newInterface(int a) 
+	{
+		return a;
+	}
+}
+===================================================================================================
+12.Is there any error in following code?
+@FunctionalInterface
+interface NIT
+{
+	String myInterface(String a); //abstract method 
+	int hashCode(); //Object class methods
+	String toString();	
+}
+=================================================================================
+13.Is there any error in following code?
+@FunctionalInterface
+interface NIT
+{
+	String myInterface(String a); //abstract method
+	String toString(); //Object class method
+	void wait();
+	void notify();
+	
+}
+================================================================================
+14.What is the output of the following code
+public class FunctionalInterfaceExample{
+	public static void main(String[] args) {
+		Predicate<Integer> grater = a -> a >15;
+		
+		Predicate<Integer> less = a -> a <10;
+		
+		boolean bool = grater.test(20);
+		boolean bool1 = less.test(5);
+		System.out.println(bool);
+		System.out.println(bool1);		
+		
+	}
+}
+===================================================================================
+15.What is the output of the following code
+public class FunctionalInterfaceExample{
+	public static void main(String[] args) 
+	{
+		String str[]= {"Java","Python","Naresh","IT"};
+		
+		Predicate<String> prediacte = p -> p.endsWith("va");
+		for(String s: str) 
+		{
+			if(prediacte.test(s))
+				System.out.println(s);
+		}
+	}
+}
+
+=======================================================================================================
+16.What is the output of the following code
+interface NIT
+{
+	public int myInterface(int a);
+}
+
+public class Java8 {
+	public static void main(String[] args) {
+		NIT nit = (a) -> a+1;
+		int i = nit.myInterface(6);
+		System.out.println(i);
+	}
+}
+================================================================================
+17.What is the output of the following code?
+@FunctionalInterface
+interface NIT
+{	
+	int myInterface(int a);
+}
+
+@FunctionalInterface
+interface NewInterface
+{
+	void alpha(String a);
+}
+
+public class Java8 {
+	public static void main(String[] args) {
+		NIT nit = (a) -> a*a*a;
+		System.out.println(nit.myInterface(5));
+		NewInterface result = (a) -> System.out.println("Welcome to NareshIT");
+		result.alpha("");
+	}
+}
+
+18.What is the output of the following code?
+public class Java8 {
+	public static void main(String[] args) {
+		Consumer<Integer> value = (a) -> System.out.println(a*3);
+		value.accept(5);
+	}
+}
+
+
+19. What is the output of the following code?
+public class Java8 {
+	public static void main(String[] args) {
+		Consumer<String> value = (a) -> System.out.println("Naresh I Technologies");
+		value.accept("");
+	}
+}
+
+
+20. What is the output of the following code?
+public class Java8 {
+	public static void main(String[] args) {
+		Consumer<String> value = (a) -> System.out.println(a.toLowerCase());
+		value.accept("NareshIT");
+	}
+}
+=========================================================================================
+Assignment - 01
+---------------
+Create a Java program that defines a method modifyValue to perform modifications on an integer value using a provided consumer. The program should include three consumers: doubleValue, incrementBy, and squareValue, each with different modification operations. Your task is to implement the modifyValue method such that it accepts an integer value and a consumer as parameters, and applies the modification specified by the consumer to the value.
+
+class name  ValueModifier(ELC): 
+
+Define a method modifyValue in the ValueModifier class :
+Method name : modifyValue
+Access Modifier : public
+Non-Access Modifier : static
+return type : void
+parameters : int value, Consumer<Integer>
+This method should apply the operation specified by the consumer to the value.
+Implement the modifyValue method such that it applies the operation specified by the consumer to the value.
+
+In the main method:
+Define three consumers:
+doubleValue: Doubles the value.
+incrementBy: Increments the value by a given value increment.
+squareValue: Squares the value.
+
+Define a sample integer value (e.g., 5).
+Test each consumer using the modifyValue method and print the modified value after each operation.
+
+Example Output:
+Original value: 5
+After doubling the value: 10
+After incrementing the value by 3: 8
+After squaring the value: 25
+
+Test Case 1:
+For sampleValue = 5:
+
+Expected Output :
+Original value: 5
+After doubling the value: 10
+After incrementing the value by 3: 8
+After squaring the value: 25
+
+Test Case 2: 
+Negative Value = -8
+
+Expected Output :
+Original value: -8
+After doubling the value: -16
+After incrementing the value by 3: -5
+
+Test Case 3: Zero Value = 0
+Expected Output :
+Original value: 0
+After doubling the value: 0
+After incrementing the value by 3: 3
+
+==================================================================================================================================================================================
+ANS==
+
+package com.lambdaExpression;
+import java.util.function.Consumer;
+
+public class LambdaModifyTheNumber {
+
+	public static void main(String[] args) {
+		
+		int a = Integer.parseInt(IO.readln("Enter a number >>> "));
+		
+		
+		Consumer<Integer>modify=b->IO.println("After doubling the value: "+a*2);
+		Consumer<Integer>modify1=b->IO.println("After incrementing the value by 3: "+(a+3));
+		Consumer<Integer>modify2=b->IO.println("After squaring the value: "+a*a);
+		
+		modify.accept(a);
+		modify1.accept(a);
+		modify2.accept(a);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
