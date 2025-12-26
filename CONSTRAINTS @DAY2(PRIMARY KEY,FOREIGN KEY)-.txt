@@ -1,0 +1,261 @@
+                              CONSTRAINTS TASK
+                           =====================
+
+4.Foreign Key:-in all relational databases If we want to establishes relationship
+=============  between tables then we are using referential integrity
+               constraint Foreign Key.
+
+
+    Generally One table foreign key must belongs to another table
+primary key. And also these primary key, foreign key columns must
+belong to same datatype.
+
+
+   Always foreign key values based on related primary key values only.
+Generally primary key doesn't accepts duplicate, null values where as
+foreign key accepts duplicate, null values.
+
+
+Column level:-(References)
+=============
+Syntax:-
+=======
+create table tablename(col1 datatype(size) references mastertablename(primarycolumnname).....);
+
+EX:-
+===
+
+SQL> create table t5(sno number(10) primary key, name varchar2(10));//master table
+
+    Table created
+
+SQL> create table t7(sno number(10) references t5); //child table
+                                                |--->mastertablename
+                    Or
+
+SQL> create table g4(x number((10) references t5(sno));
+                                               |--->mastertablename
+
+
+Table Level: (Foreign key, references)
+===========
+Syntax:-
+========
+create table tablename(col1 datatype(size),col2 datatype(size),.........., foreign
+                       key(col1,col2,.......) references mastertablename(primarykeycolnames));
+
+
+
+------------------------------------------------------------------------------------------------------
+
+1.Establish the relationship between COURSES123 and STUDENTS123 table by using
+  Primary key, Foreign key with the following Rules
+
+
+--->after creating the tables insert the records and observe
+    the outputs.
+
+COURSES123 Table Rules:-
+
+1.cid does not accept null values and duplicate values
+
+2.cname does not accept null values
+
+
+STUDENTS123 Table Rules:-
+
+1.sid doesn't accept null values and duplicate values
+
+2.sname doesn't accept nulls
+
+3.cid should present in courses table cid column
+
+
+
+
+SQL> CREATE TABLE COURSES123(
+  2  C ID NUMBER(10) PRIMARY KEY,
+  3  CNMAE VARCHAR(30) NOT NULL
+  4  );
+C ID NUMBER(10) PRIMARY KEY,
+     *
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+SQL> CREATE TABLE COURSES123(
+  2  C ID NUMBER(10) PRIMARY KEY,
+  3  CNMAE VARCHAR(30) NOT NULL
+  4  CREATE TABLE COURSES123(
+  5
+SQL> CREATE TABLE COURSES123(
+  2  CID NUMBER(10) PRIMARY KEY,
+  3  CNMAE VARCHAR(30) NOT NULL
+  4  );
+
+Table created.
+
+SQL> CREATE TABLE STUDENTS123 (
+  2      sid   NUMBER(10) PRIMARY KEY,
+  3      sname VARCHAR2(30) NOT NULL,
+  4      cid   NUMBER(10),
+  5      CONSTRAINT fk_students_courses
+  6      FOREIGN KEY (cid)
+  7      REFERENCES COURSES123(cid)
+  8  );
+
+Table created.
+
+SQL> INSERT INTO COURSES123 VALUES (101, 'JAVA');
+
+1 row created.
+
+SQL> INSERT INTO COURSES123 VALUES (102, 'PYTHON');
+
+1 row created.
+
+SQL>
+SQL> -- Insert into child table (valid)
+SQL> INSERT INTO STUDENTS123 VALUES (1, 'AJAY', 101);
+
+1 row created.
+
+SQL>
+SQL> SELECT * FROM COURSES123;
+
+       CID CNMAE
+---------- ------------------------------
+       101 JAVA
+       102 PYTHON
+
+====================================================================================================================================================
+2.Establish the relationship between DOCTORS and PATIENTS table by using
+  Primary key, Foreign key
+
+
+DOCTORS                                        PATIENTS
+=======                                        ==========
+    PK                                                                FK
+ DOCTORID     DNAME    SPECIALTY                PATIENTID    PNAME    DOCTORID 
+
+ 
+
+SQL> CREATE TABLE DOCTORS (
+  2      DOCTORID NUMBER(10) PRIMARY KEY,
+  3      DNAME    VARCHAR2(30) NOT NULL,
+  4      SPECIALTY VARCHAR2(30)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE PATIENTS (
+  2      PATIENTID  NUMBER PRIMARY KEY,
+  3      PNAME      VARCHAR2(50),
+  4      DOCTORID   NUMBER,
+  5      CONSTRAINT fk_doctor
+  6      FOREIGN KEY (DOCTORID)
+  7      REFERENCES DOCTORS(DOCTORID)
+  8  );
+
+Table created.
+
+SQL> INSERT INTO DOCTORS VALUES (1, 'Dr. Sharma', 'Cardiology');
+
+1 row created.
+
+SQL> INSERT INTO DOCTORS VALUES (2, 'Dr. Patil', 'Neurology');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO PATIENTS VALUES (101, 'Amit', 1);
+
+1 row created.
+
+SQL> INSERT INTO PATIENTS VALUES (102, 'Neha', 1);
+
+1 row created.
+
+SQL> INSERT INTO PATIENTS VALUES (103, 'Rahul', 2);
+
+1 row created.
+
+SQL> select * from DOCTORS;
+
+  DOCTORID DNAME                          SPECIALTY
+---------- ------------------------------ ------------------------------
+         1 Dr. Sharma                     Cardiology
+         2 Dr. Patil                      Neurology
+
+SQL> select * from PATIENTS;
+
+ PATIENTID PNAME                                                DOCTORID
+---------- -------------------------------------------------- ----------
+       101 Amit                                                        1
+       102 Neha                                                        1
+       103 Rahul                                                       2
+
+==============================================================================
+
+
+3.Create the EMP5 table with following columns. and you only think
+  which constraint is suitable at the time of table creation it self
+  and use all constraints(SQL SERVER MOCK INTERVIEW QUESTION)
+
+NOTE:-for this question just create the table with constraints
+       is enough.
+
+EMPNO     ENAME     SAL     MGRNO     AGE     ADDRESS    PHONO
+
+
+CREATE TABLE EMP5
+(
+    EMPNO    INT
+        CONSTRAINT PK_EMP5 PRIMARY KEY,
+
+    ENAME    VARCHAR(50)
+        CONSTRAINT NN_EMP5_ENAME NOT NULL,
+
+    SAL      DECIMAL(10,2)
+        CONSTRAINT CK_EMP5_SAL CHECK (SAL > 0),
+
+    MGRNO    INT
+        CONSTRAINT FK_EMP5_MGR 
+        FOREIGN KEY REFERENCES EMP5(EMPNO),
+
+    AGE      INT
+        CONSTRAINT CK_EMP5_AGE CHECK (AGE BETWEEN 18 AND 60),
+
+    ADDRESS  VARCHAR(100),
+
+    PHONO    VARCHAR(10)
+        CONSTRAINT UQ_EMP5_PHONO UNIQUE
+        CONSTRAINT CK_EMP5_PHONO CHECK (PHONO LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
