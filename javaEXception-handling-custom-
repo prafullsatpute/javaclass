@@ -1,0 +1,377 @@
+
+Q1) Find the output of the Program
+
+class  ExceptionTest
+{
+	public static void main(String[] args) 
+	{
+	    Exception e1 = new ArithmeticException("Number is divided by zero");
+		System.out.println(e1);
+
+         Exception e2 = new ArrayIndexOutOfBoundsException("Array is out of limit");
+		System.out.println(e2);
+
+	}
+}
+
+ANS-Number is divided by zero
+   Array is out of limit
+
+-------------------------------------------------------------------------------------------
+Q2) Find the output of the Program
+
+public class a87 {
+  public static void main(String[] argv) 
+  {
+    try 
+    {
+      throw new OutOfMemoryError();
+      System.out.println("Success");
+    }
+    catch (Exception e) 
+    {
+      System.out.println("General exception");
+    } 
+    finally
+    {
+      System.out.println("Doing finally part");
+    }
+    System.out.println("Carrying on");
+
+  }
+}
+ANS-throw new OutOfMemoryError();
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3) Find the output of the Program
+
+public class a103 
+{
+      static String s = "";
+      public static void main(String[] args) 
+      {
+            try 
+            {
+                 s += "1";
+                 throw new Exception();
+            } catch (Exception e) 
+            {
+                 s += "2";
+            } 
+            finally 
+            { 
+                  s += "3";
+                  doStuff(); 
+                  s += "4";
+            }
+            System.out.println(s);
+       }
+       static void doStuff() 
+       { 
+            int x = 0; 
+            int y = 7/x; 
+       }
+}
+ANS-ERROR 
+  
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q4) Find the output of the Program
+
+ public class a105
+{
+      static String s = "-";
+      public static void main(String[] args) 
+      {
+            try 
+            {
+                 throw new Exception();
+            } 
+            catch (Exception e) 
+            {
+                 try 
+                 {
+                      try 
+                      {
+                           throw new Exception();
+                      } 
+                      catch (Exception ex)
+                      {
+                           s += "ic ";
+                      }
+                      throw new Exception();
+                  } 
+                  catch (Exception x) 
+                  {
+                       s += "mc ";
+                  } 
+                  finally 
+                  {
+                       s += "mf ";
+                  }
+            } 
+            finally 
+            {
+                  s += "of ";
+            }
+            System.out.println(s);
+     }
+}
+
+ANS=ic mc mf of 
+---------------------------------------------------------------------------------------------------------------
+Q5) Find the output of the Program
+
+public class a110 
+	{
+    public static void main(String[] args) 
+	{
+        try {
+            throw new java.io.IOException();
+        } 
+		catch (java.io.IOException exc) {
+            System.err.println("In catch IOException: "+exc.getClass());
+            throw new RuntimeException();
+        }
+		catch (Exception exc) {
+            System.err.println("In catch Exception: "+exc.getClass());
+        }
+		finally {
+            System.err.println("In finally");
+        }
+    }
+}
+
+ANS-java.lang.RuntimeException
+	at a110.main(Main.java:10)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q6) Find the output of the Program
+
+public class Test40{
+   public static void main(String[] args) throws Exception
+	{
+      System.out.println("Enter main()");
+      try
+      {
+		methodA();
+      }
+      catch (Exception e)
+      {
+		  System.out.println(e);
+      }
+      System.out.println("Exit main()");
+   }
+ 
+   public static void methodA() throws Exception
+	   {
+      System.out.println("Enter methodA()");
+      methodB();
+      System.out.println("Exit methodA()");
+   }
+ 
+   public static void methodB() throws Exception
+	   {
+      System.out.println("Enter methodB()");
+      	methodC();
+      System.out.println("Exit methodB()");
+   }
+ 
+   public static void methodC() throws Exception
+	   {
+      System.out.println("Enter methodC()");
+       System.out.println(1/0);
+      System.out.println("Exit methodC()");
+   }
+}
+ANS-
+Enter main()
+Enter methodA()
+Enter methodB()
+Enter methodC()
+java.lang.ArithmeticException: / by zero
+Exit main()
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q7) Find the output of the Program
+class Test43 
+{
+	public static void main(String[] args)  
+	{
+		methodA();
+	}
+
+	public static void methodA() throws Exception
+	{
+		System.out.println("Completed..");
+	}
+}
+
+ANS-tmp/UsLr2325ry/Main.java:1: error: class, interface, enum, or record expected
+^
+1 error
+ERROR!
+error: compilation failed
+
+=== Code Exited
+===================================================================================================================
+
+Q8) Find the output of the Program
+
+class Test44 
+{
+	public static void main(String[] args) throws Exception 
+	{
+		methodA();
+	}
+
+	public static void methodA() throws Exception
+	{
+		System.out.println("Completed..");
+	}
+}
+ 
+ANS= Completed..
+
+----------------------------------------------------------------------------------------------------------------------
+Q9) Find the output of the Program
+import java.io.*;
+class Test45 
+{
+	public static void main(String[] args) throws Exception 
+	{
+		methodA();
+	}
+
+	public static void methodA() throws IOException
+	{
+		System.out.println("Completed..");
+	}
+}
+Ans-
+  Completed..
+
+=======================================================================================================================================
+Q10) Find the output of the Program
+import java.io.*;
+class Test46 
+{
+	public static void main(String[] args) throws IOException 
+	{
+		methodA();
+	}
+
+	public static void methodA() throws Exception
+	{
+		System.out.println("Completed..");
+	}
+}
+
+ANS=Error
+======================================================================================================================================================================
+Ques : 1
+=========
+Implement a Java program that simulates various car-related exceptions using custom exception classes (CarStopped, CarPuncture, CarHeat). 
+The program should handle different scenarios and test cases using the CarTest class and demonstrate exception handling through static methods.
+
+-> Create CarStoppedException class : extends Exception
+   Purpose: This class is used for raise the exception if car is stops for reasons other than puncture or overheating.
+
+-> Constructor:
+   Parameterized Constructor with String as parameter
+
+---------------------------------------
+
+-> Create CarPunctureException class: extends Exception
+   This class is used for raise the exception if car is punctured.
+
+-> Constructor:
+   Parameterized Constructor with String as parameter
+
+---------------------------------------
+
+-> Create CarHeatException class: extends Exception
+   This class is used for raise the exception if the car engine is more than 50 degrees Celsius
+
+-> Constructor:
+   Parameterized Constructor with String as parameter
+
+---------------------------------------
+
+-> Create CarTest class:
+   Contains static methods to simulate car operations and throw exceptions based on certain conditions.
+
+-> Instance Variables:
+   No Instance Variables
+
+-> Methods:
+   Stop(String): void: static
+   This class throws CarStoppedException. If the string is  stop  throw new exception and get the message or else message is Car not stall
+
+
+-> Methods:
+   puncture(String): void: static: public
+   This class throws CarPunctureException. If the string is puncture  throw new exception and get the message line  Car is punctured  or else message is Car not stall.
+
+-> Methods:
+   carHeat(int): void: static : public
+   This class throws CarHeatException. If the car heat is more than 50 degrees calicoes it throw new exception and get the message line  Car is heated more the 50 degrees  or else message is Car not stall.
+
+---------------------------------------
+
+-> Create ELC class CarUser :-
+   Invoke stop, puncture, and carHeat methods with appropriate messages or temperatures to test different scenarios.
+   Ensure that exceptions are properly thrown and caught where applicable.
+
+
+Test Cases for Car Exceptions
+----------------------------------
+
+Car Stopped Exception Test:
+Action: Invoke CarTest.stop("stop").
+Expected Output: Should throw CarStoppedException with message "Car stopped for some reason."
+
+Car Not Started Test:
+Action: Invoke CarTest.stop("go").
+Expected Output: Should print "Car not stalled."
+
+Car Puncture Exception Test:
+Action: Invoke CarTest.puncture("puncture").
+Expected Output: Should throw CarPunctureException with message "Car is punctured."
+
+Car Not Punctured Test:
+Action: Invoke CarTest.puncture("move").
+Expected Output: Should print "Car not punctured."
+
+Car Overheating Exception Test:
+Action: Invoke CarTest.carHeat(60).
+Expected Output: Should throw CarHeatException with message "Car is heated more than 50 degrees Celsius."
+
+Car Temperature Normal Test:
+Action: Invoke CarTest.carHeat(40).
+Expected Output: Should print "Car temperature normal."
+
+################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
