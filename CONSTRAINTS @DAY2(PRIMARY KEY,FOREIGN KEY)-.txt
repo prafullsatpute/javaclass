@@ -208,48 +208,6 @@ NOTE:-for this question just create the table with constraints
 EMPNO     ENAME     SAL     MGRNO     AGE     ADDRESS    PHONO
 
 
-CREATE TABLE EMP5
-(
-    EMPNO    INT
-        CONSTRAINT PK_EMP5 PRIMARY KEY,
-
-    ENAME    VARCHAR(50)
-        CONSTRAINT NN_EMP5_ENAME NOT NULL,
-
-    SAL      DECIMAL(10,2)
-        CONSTRAINT CK_EMP5_SAL CHECK (SAL > 0),
-
-    MGRNO    INT
-        CONSTRAINT FK_EMP5_MGR 
-        FOREIGN KEY REFERENCES EMP5(EMPNO),
-
-    AGE      INT
-        CONSTRAINT CK_EMP5_AGE CHECK (AGE BETWEEN 18 AND 60),
-
-    ADDRESS  VARCHAR(100),
-
-    PHONO    VARCHAR(10)
-        CONSTRAINT UQ_EMP5_PHONO UNIQUE
-        CONSTRAINT CK_EMP5_PHONO CHECK (PHONO LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
