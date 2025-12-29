@@ -1,0 +1,522 @@
+                               CLAUSES MCQ'S
+                              ===============
+
+1.What is the primary purpose of the GROUP BY clause?
+
+a) Sort results in ascending order
+
+b) Combine rows into summary rows
+
+c) Filter rows before grouping
+
+d) Join multiple tables
+
+Answer:  
+
+
+2.Which clause is used to group rows that have the same values in specified columns?
+
+A) SORT BY
+
+B) GROUP BY
+
+C) ORDER BY
+
+D) DISTINCT
+
+Answer:
+
+
+3.Which clause filters groups after group by?
+
+a) WHERE
+
+b) ORDER BY
+
+c) HAVING
+
+d) JOIN
+
+Answer: 
+
+
+4.If one or more columns are there in a SELECT statement in addition to the 
+  SUM or AVG function, these columns need to be a part of _______
+
+a) Having clause
+
+b) Order By clause
+
+c) Group By clause
+
+d) Where clause
+
+Answer:
+
+
+5.Which of the following is the correct order of execution of following clauses
+  in a SELECT statement
+
+a) FROM → SELECT → WHERE → GROUP BY → HAVING → ORDER BY
+
+b) WHERE → FROM → GROUP BY → HAVING → SELECT → ORDER BY
+
+c) FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
+
+d) SELECT → HAVING → GROUP BY → WHERE → ORDER BY → FROM
+
+
+Answer: 
+
+
+6.The GROUP BY clause is generally used with which functions?
+
+a) Character functions
+
+b) Comparison operators
+
+c) Aggregate (group) functions
+
+d) Conversion functions
+
+
+Answer:
+
+
+7.Which clause is used in SQL to filter rows before grouping?
+
+A. HAVING
+
+B. GROUP BY
+
+C. WHERE
+
+D. ORDER BY
+
+
+Answer:
+
+
+8.Which query will fail?
+
+a) SELECT department, AVG(salary) FROM employees GROUP BY department
+
+b) SELECT department, salary FROM employees GROUP BY department
+
+c) SELECT department, COUNT(*) FROM employees GROUP BY department
+
+d) SELECT AVG(salary) FROM employees GROUP BY department
+
+
+Answer: 
+
+
+
+9.Which of the following order is valid in writing SELECT query 
+
+a) SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY
+
+b) SELECT → FROM → GROUP BY → WHERE → HAVING → ORDER BY
+
+c) SELECT → FROM → WHERE → HAVING → GROUP BY → ORDER BY
+
+d) SELECT → FROM → HAVING → GROUP BY → WHERE → ORDER BY
+
+Answer: 
+ 
+
+10.Which query calculates average salary per department having more than 5 employees?
+
+a)
+SELECT department, AVG(salary)  
+FROM employees  
+WHERE COUNT(*) > 5  
+GROUP BY department  
+
+b)
+SELECT department, AVG(salary)  
+FROM employees  
+GROUP BY department  
+HAVING COUNT(*) > 5  
+
+Answer:  
+
+
+11.What is the purpose of Order By Clause in Oracle?
+
+a) It is used to sort the result.
+
+b) It is used to change sequence order of columns
+
+c) It can’ be used in oracle
+
+d) None of the above
+
+Answer: 
+
+
+12.What is the default order of Order by Clause?
+
+a) Descending
+
+b) Ascending
+
+c) Random
+
+d) None of the above
+
+Answer: 
+
+ 
+13.Which of the following statements about the WHERE and HAVING clauses is correct?
+
+a) WHERE filters groups, and HAVING filters rows
+
+b) WHERE filters rows before grouping, and HAVING filters groups after grouping
+
+c) Both WHERE and HAVING can be used interchangeably
+
+d) HAVING is executed before GROUP BY
+
+Answer:
+
+
+14.Is it possible to use both Orders (i.e. ASC/DESC) in a single query?
+
+a) Yes 
+ 
+b) No
+
+Answer: 
+
+
+15.Which clause is always executed last in a SELECT statement?
+
+a) GROUP BY
+
+b) HAVING
+
+c) ORDER BY
+
+d) WHERE
+
+Answer: 
+
+16.Which clause is used to sort the result set in ascending order ?
+
+a)WHERE
+
+b)GROUP BY
+
+c)ORDER BY
+
+d)HAVING
+
+Answer: c)ORDER BY
+
+
+17.To sort results by total_sales descending, use:
+
+a) ORDER BY total_sales ASC
+
+b) ORDER BY total_sales DESC
+
+c) GROUP BY total_sales DESC
+
+d) HAVING total_sales DESC
+
+Answer:
+
+
+18.What happens if you use GROUP BY and ORDER BY together in a query?
+
+a) GROUP BY sorts the rows, ORDER BY groups them
+
+b) ORDER BY sorts the groups created by GROUP BY
+
+c) GROUP BY and ORDER BY cannot be used together
+
+d) ORDER BY must come before GROUP BY
+
+Answer:
+
+
+19.Which of the following is true about the HAVING clause?
+
+a) Similar to the WHERE clause but is used for columns rather than groups.
+
+b) Similar to WHERE clause but is used for rows rather than columns.
+
+c) Similar to WHERE clause but is used for groups rather than rows.
+
+d) Acts exactly like a WHERE clause.
+
+Answer:
+
+
+20.Which of the following can be used with the ORDER BY clause in place of a column name?
+
+a) Row name
+
+b) Table name
+
+c) Column position within the SELECT list
+
+d) Attribute name
+
+Answer:
+
+
+21. Evaluate these two SQL statements:
+
+SELECT last_name, salary, hire_date FROM EMPLOYEES ORDER BY salary DESC;
+
+SELECT last_name, salary, hire_date FROM EMPLOYEES ORDER BY 2 DESC;
+
+What is true about them?
+
+a) The two statements produce identical results.
+
+b) The second statement returns a syntax error.
+
+c) There is no need to specify DESC because the results are sorted in descending order by default.
+
+d) The two statements can be made to produce identical results by adding a column alias
+   for the salary column in the second SQL statement.
+
+Answer:
+
+
+
+22.The columns specified in ORDER BY clause must present in columns specified in the SELECT
+   column list.
+
+a) True
+
+b) False
+
+Answer:
+
+
+23.What does the DISTINCT keyword do?
+
+A) Groups rows together
+
+B) Removes duplicate rows from the result set
+
+C) Sorts rows in descending order
+
+D) Applies an aggregate function
+
+Answer:
+
+
+24.Can a GROUP BY clause be used without aggregate functions?
+
+a) Yes
+
+b) No
+
+Answer:
+
+------------------------------------------------------------------------------------------------------
+                                   Joins Mcq's
+                                 ==============
+
+1.Which join returns only the rows that have matching values in both tables?
+
+a) Left Outer Join
+
+b) Right Outer Join
+
+c)Inner Join
+
+d)Full Outer Join
+
+Answer:
+
+
+2.What is a Self Join?
+
+a) Joining two tables with the same name
+
+b) Joining a table to itself
+
+c) Joining three or more tables
+
+d) Joining tables without a condition
+
+Answer:
+
+
+3.Which Join returns all the rows from the left side table and matching rows from right table?
+
+a) Inner Join
+
+b) Right Outer Join
+
+c) Left Outer Join
+
+d) Full Outer Join
+
+Answer:
+
+
+4.Which of the following is a type of join in oracle
+
+a) Cross Join
+
+b) Equi join
+
+c) Outer Join
+
+d) All of the above
+
+Answer:
+
+
+5.In oracle,which clause is used to specify the join condition?
+
+a) SELECT
+
+b) WHERE or ON
+
+c) ORDER BY
+
+d) GROUP BY
+
+Answer:
+
+
+
+6.The same table appears twice in from clause and is followed by table aliases…
+
+a) simple join
+
+b) non equi join
+
+c) equi join
+
+d) self join
+
+Answer:
+
+
+7.‘A’ and ‘B’ are two tables……Now I want to get the total data of ‘A’ 
+  which is not available in ‘B’……Then the position of the (+) operator is……….
+
+a) Beside the column of ‘A’
+
+b) Beside the column of ‘B’.
+
+c) None
+
+d) 1 and 2.
+
+Answer:
+
+
+8.If ‘n’ tables joined, min. howmany Join conditions are required?
+
+a) n - 1 
+
+b) n + 1		
+
+c) n + n		
+
+d) infinite
+
+Answer:
+
+
+9.What does Right Join do?
+
+a) Returns all rows from the right table and matching rows from the left table
+
+b) Returns only matching rows from both tables
+
+c) Returns all rows from the left table
+
+d) returns rows that do not match
+
+Answer: 
+
+
+10.What happens if you join two tables without a join condition?
+
+a) No rows are returned
+
+b) Only the matching rows are returned
+
+c) A cartesion product is produced
+
+d) An error is thrown
+
+Answer: 
+
+
+11.Which JOIN returns all rows from both tables with NULLs for non-matches
+
+a) Inner Join
+
+b) Left Outer Join
+
+c) Right Outer Join
+
+d) Full Outer Join
+
+Answer:
+
+
+12.What does a CROSS JOIN produce?
+
+a) All row combinations from both tables
+
+b) Matching rows only
+
+c) Rows from the left table only
+
+d) Rows with NULLs for non-matches
+
+Answer:
+
+
+13.A LEFT OUTER JOIN returns:
+
+a) Only matching rows
+
+b) All rows from left table and matching rows from right table
+
+c) All rows from right table only
+
+d) Only unmatched rows
+
+Answer:
+
+
+14.Which type of join returns the Cartesian product of two tables?
+
+a) Inner Join
+
+b) Cross Join
+
+c) Left Outer Join
+
+d) Right Outer Join 
+
+Answer:
+
+
+15.What does an INNER JOIN do?
+
+a) Returns all rows from both tables
+
+b) Returns only matched rows from both tables
+
+b) Returns unmatched rows from both tables
+
+d) Returns rows with NULL values only
+
+Answer: 
+
+
