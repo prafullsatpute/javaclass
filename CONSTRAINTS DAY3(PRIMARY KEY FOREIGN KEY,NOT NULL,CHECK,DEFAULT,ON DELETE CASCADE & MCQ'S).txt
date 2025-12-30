@@ -126,9 +126,9 @@ c) PRIMARY KEY
 d) CHECK
 
 Answer:
+c) PRIMARY KEY
 
-
-
+==================================================================================================================================
 2.Which constraint allows duplicate values but does not allow NULL values?
 
 a) UNIQUE
@@ -139,9 +139,9 @@ c) FOREIGN KEY
 
 d) NOT NULL
 
-Answer:
+Answer:b) PRIMARY KEY
 
-
+=============================================================================================================================
 3.unique constraint allows how many number of null values………
 
 a) 1
@@ -153,9 +153,9 @@ c) inifinity
 d) None
 
 Answer:
+c) inifinity
 
-
-
+========================================================================================================================
 4.Primary key means the following combinations……..
            
                 (OR)
@@ -173,9 +173,10 @@ c) NOT NULL, FOREIGN KEY
 d) NOT NULL, UNIQUE
 
 Answer:
+) NOT NULL, UNIQUE
 
 
-
+=============================================================================================================
 5.Which constraint enforces referential integrity(relationship) between two tables?
 
 a) UNIQUE
@@ -186,9 +187,9 @@ c) FOREIGN KEY
 
 d) NOT NULL
 
-Answer:
+Answer:c) FOREIGN KEY
 
-
+===================================================================================================================
 
 6.Which constraint is used to restrict duplicate values?
 
@@ -200,9 +201,9 @@ c) CHECK
 
 d) FOREIGN KEY
 
-Answer:
+Answer:b) UNIQUE
 
-
+===================================================================================================
 
 7.Which constraint ensures that a column cannot have NULL values?
 
@@ -214,9 +215,9 @@ c) NOT NULL
 
 d) CHECK
 
-Answer:
+Answer:c) NOT NULL
 
-
+==================================================================================================
 
 8.Which of the following can accept NULL values?
 
@@ -230,8 +231,8 @@ d) UNIQUE (without NOT NULL)
 
 Answer: 
 
-
-
+d) UNIQUE (without NOT NULL)
+=========================================================================================================
 9. What does a CHECK constraint do?
 
 a) Check for referential integrity 
@@ -245,7 +246,7 @@ d) Check column values satisfies specific condition
 Answer: 
 
 
-
+==================================================================================
 10.Which of the following is true about DEFAULT constraint?
 
 a) It prevents NULLs in a column
@@ -259,7 +260,7 @@ d) It automatically creates a foreign key
 Answer: 
 
 
-
+=========================================================================================
 11.Which constraint is used to enforce a unique value in a column?
 
 a) PRIMARY KEY
@@ -401,4 +402,5 @@ d) alter table t2 modify C1 NULL;
 d) alter table t2  drop constraint constraintname;
 
 Answer:
+
 
