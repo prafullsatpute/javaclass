@@ -1,0 +1,404 @@
+                                   CONSTRAINTS TASK
+                                  ==================
+
+Default -in all relational databases if we want to provide
+=======  default values into a table column then we are using
+         default clause.
+
+• It is used to apply default value to table column.
+
+• If we pass the value, it takes that value. if we don't pass the value
+  it takes default value.
+
+
+syntax:-
+======
+columnname datatype(size) default defaultvalue
+
+EG:-
+===
+
+SQL>create table test4(name varchar2(10), sal number(10) default 3000);
+
+SQL>insert into test4(name)values('SURYA');---->NULL values overrides the default values,then we must                                                  use Skipping columns method to apply default values.
+
+SQL>insert into test4 values('ANUSHKA',5000);
+
+SQL>select * from test4;
+   
+    NAME         SAL
+  -------     ---------
+  SURYA          3000
+  ANUSHKA        5000
+
+------------------------------------------------------------------------------------------------------
+
+1.Create a student10 table with 4 columns and apply following constraints.
+
+--->after creating the table insert the records and observe
+    the outputs.
+
+SID           should not accept duplicate values and null values
+SNAME         should not accept null values
+INAME         by default INAME is 'NARESH IT'
+CITY          by default CITY is 'AMMERPET' 
+FEE           by default FEE is 30000
+
+
+2.Create following ACCOUNTS, TRANSACTIONS tables with given rules ?
+
+Rules :- 
+
+1. ACCNO should not be duplicate and null
+2. ACTYPE  should be ‘S’ OR ‘C’
+3. Bal must be min 1000
+
+
+Rules :- 
+
+1. TRID should not be duplicate and null
+2. TTYPE  must be 'W' OR 'D'
+3. By default TDATE is today’s date
+4. AMT must be multiple of 100
+5. ACCNO should present in accounts table ACCNO column
+
+
+
+3. Create following CUSTOMERS123,ORDERS123 tables with given rules ?
+
+Rules:-
+
+1. CUSTID must be unique and not null.
+
+2. CNAME should not accept null values.
+
+3. CITY must be either GUNTUR,VJD, or HYD.
+
+
+
+Rules:-
+
+1. ORDERID must be unique and not null.
+
+2. By default ODATE is today's date.
+
+3. AMOUNT must be greater than 0.
+
+4. CUSTID must be present in the CUSTOMERS table CUSTID column.
+
+
+
+
+ON DELETE CASCADE:-On delete cascade clause used along with foreign key
+                   constraint. Whenever child table having on delete
+                   cascade clause. If we are deleting master table
+                   records from master table then automatically
+                   deleted from the child table.
+
+
+
+4.Create mas table, child table and establish relation b/w tables .
+
+--->after creating the tables insert the records. delete the mas table
+    records and observe the outputs in child table.
+
+mas
+---
+sno ---->primary key 
+
+child
+----
+sno ---->foreign key along with on delete cascade 
+                         
+
+------------------------------------------------------------------------------------------------------
+                                       CONSTRAINTS MCQ'S
+                                     =====================
+
+1.Which constraint is uniquely identifies record in a table?
+
+a) UNIQUE
+
+b) FOREIGN KEY
+
+c) PRIMARY KEY
+
+d) CHECK
+
+Answer:
+
+
+
+2.Which constraint allows duplicate values but does not allow NULL values?
+
+a) UNIQUE
+
+b) PRIMARY KEY
+
+c) FOREIGN KEY
+
+d) NOT NULL
+
+Answer:
+
+
+3.unique constraint allows how many number of null values………
+
+a) 1
+
+b) 2
+
+c) inifinity
+
+d) None
+
+Answer:
+
+
+
+4.Primary key means the following combinations……..
+           
+                (OR)
+
+  ________ and ___________ constraints form the core of the PRIMARY KEY 
+  constraint in Oracle.
+  
+
+a) NOT NULL, CHECK
+
+b) NOT NULL, DEFAULT
+
+c) NOT NULL, FOREIGN KEY 
+
+d) NOT NULL, UNIQUE
+
+Answer:
+
+
+
+5.Which constraint enforces referential integrity(relationship) between two tables?
+
+a) UNIQUE
+
+b) CHECK
+
+c) FOREIGN KEY
+
+d) NOT NULL
+
+Answer:
+
+
+
+6.Which constraint is used to restrict duplicate values?
+
+a) NOT NULL
+
+b) UNIQUE
+
+c) CHECK
+
+d) FOREIGN KEY
+
+Answer:
+
+
+
+7.Which constraint ensures that a column cannot have NULL values?
+
+a) PRIMARY KEY
+
+b) UNIQUE
+
+c) NOT NULL
+
+d) CHECK
+
+Answer:
+
+
+
+8.Which of the following can accept NULL values?
+
+a) PRIMARY KEY
+
+b) CHECK
+
+c) NOT NULL
+
+d) UNIQUE (without NOT NULL)
+
+Answer: 
+
+
+
+9. What does a CHECK constraint do?
+
+a) Check for referential integrity 
+
+b) check for duplicate values
+
+c) check for NULL values
+
+d) Check column values satisfies specific condition
+
+Answer: 
+
+
+
+10.Which of the following is true about DEFAULT constraint?
+
+a) It prevents NULLs in a column
+
+b) It sets a predefined value if no value is given
+
+c) It enforces uniqueness
+
+d) It automatically creates a foreign key
+
+Answer: 
+
+
+
+11.Which constraint is used to enforce a unique value in a column?
+
+a) PRIMARY KEY
+
+b) UNIQUE
+
+c) CHECK
+
+d) FOREIGN KEY
+
+Answer:
+
+
+
+12.Which of the following is NOT a valid Oracle constraint?
+
+a) NOT NULL
+
+b) CHECK
+
+c) NULL
+
+d) UNIQUE
+
+Answer:
+
+
+
+13.How many PRIMARY KEY constraints can a table have?
+
+a) One
+
+b) Two
+
+c) Unlimited
+
+d) None
+
+Answer:
+
+
+
+14.Which of the following is true about a “primary key” in Oracle?
+
+a) It can have duplicate values.
+
+b) It can be NULL.
+
+c) It uniquely identifies each record in a table.
+
+d) It is optional for a table.
+
+Answer:
+
+
+
+15.Which of the following is used to prevent the deletion of records in Oracle?
+
+a) UNIQUE constraint
+
+b) FOREIGN KEY constraint
+
+c) CHECK constraint
+
+d) ON DELETE CASCADE constraint
+
+Answer: 
+
+
+
+16.Which of the following constraint can be defined only at the column level?
+
+a) UNIQUE
+
+b) PRIMARY KEY
+
+c) NOT NULL
+
+d) CHECK
+
+Answer:
+
+
+
+17.Which of the following constraint can be defined only at the column level?
+
+a) UNIQUE
+
+b) PRIMARY KEY
+
+c) NOT NULL
+
+d) CHECK
+
+Answer:
+
+
+
+18.A FOREIGN KEY in a child table references which constraint in the parent table?
+
+a) NOT NULL
+
+b) UNIQUE or PRIMARY KEY
+
+c) CHECK
+
+d) DEFAULT
+
+Answer:
+
+
+
+19.When the table is dropped, then the status of the constraints on that table is….
+
+a) constraints are in invalid state
+
+b) constraints also dropped
+
+c) no effect on constraints
+
+d) none
+
+Answer:
+
+
+
+20.How to drop the not null constraint…..
+
+a) alter table t2 drop not null;
+
+b) alter table t2 drop constraint not null;
+
+c) alter table t2 not null(c1);
+
+d) alter table t2 modify C1 NULL;
+            
+          (OR)
+
+d) alter table t2  drop constraint constraintname;
+
+Answer:
+
