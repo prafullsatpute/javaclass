@@ -1,0 +1,375 @@
+BATCH-49 EXAM PAPER
+                             ======================
+
+1.Write a query to display the average salary of employees grouped by department.
+
+2.Display department number where the average salary of employees is more than 2000
+
+3.Write a query to list all employees ordered by their joining date in descending order.
+
+4.Find the number of employees in each department, but only display departments
+  having more than 5 employees.
+
+5.Write a query to display the maximum, minimum, and average salary for each department.
+
+6.Write a query to list employees along with their department names from emp table
+
+7.Retrieve all employees and their department names, including employees who are
+  not assigned to any department 
+
+8.List all departments and their employees.Include departments that have no employees
+
+
+
+
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10
+
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000
+        20
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30
+
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100
+        20
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10
+
+
+14 rows selected.
+
+SQL> set lines 100 pages 100;
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> SELECT deptno, AVG(sal) AS avg_salary
+  2  FROM emp
+  3  GROUP BY deptno;
+
+    DEPTNO AVG_SALARY
+---------- ----------
+        20       2175
+        30 1566.66667
+        10 2916.66667
+
+SQL> Select deptno, AVG(sal) AS Avg_salary from emp Group by deptno;
+
+    DEPTNO AVG_SALARY
+---------- ----------
+        20       2175
+        30 1566.66667
+        10 2916.66667
+
+SQL> select deptno, AvG(sal) where='2000';
+select deptno, AvG(sal) where='2000'
+                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT deptno
+  2  FROM emp
+  3  GROUP BY deptno
+  4  HAVING AVG(sal) > 2000;
+
+    DEPTNO
+----------
+        20
+        10
+
+SQL> select * from emp ordered by HIREDATE DESE;
+select * from emp ordered by HIREDATE DESE
+                          *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from emp ordered by HIREDATE DESC;
+select * from emp ordered by HIREDATE DESC
+                          *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from emp ORFER BY HIREDATE DESC;
+select * from emp ORFER BY HIREDATE DESC
+                        *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> select * from emp ORDER BY HIREDATE DESC;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100           20
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000           20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300           10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000           20
+      7900 JAMES      CLERK           7698 03-DEC-81        950           30
+      7839 KING       PRESIDENT            17-NOV-81       5000           10
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500         0          30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450           10
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850           30
+      7566 JONES      MANAGER         7839 02-APR-81       2975           20
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7369 SMITH      CLERK           7902 17-DEC-80        800           20
+
+14 rows selected.
+
+SQL> SELECT DEPTNO COUNT(*) FROM EMP GROUP BY DEPTNO HAVING COUNT(*)>5;
+SELECT DEPTNO COUNT(*) FROM EMP GROUP BY DEPTNO HAVING COUNT(*)>5
+                   *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+ QL> SELECT DEPTNO ,COUNT(*) FROM EMP GROUP BY DEPTNO HAVING COUNT(*)>5;
+
+    DEPTNO   COUNT(*)
+---------- ----------
+        30          6
+
+SQL> SELECT deptno,
+  2         MAX(sal) AS max_salary,
+  3         MIN(sal) AS min_salary,
+  4         AVG(sal) AS avg_salary
+  5  FROM emp
+  6  GROUP BY deptno;
+
+    DEPTNO MAX_SALARY MIN_SALARY AVG_SALARY
+---------- ---------- ---------- ----------
+        20       3000        800       2175
+        30       2850        950 1566.66667
+        10       5000       1300 2916.66667
+
+SQL> SELECT e.empno, e.ename, d.dname
+  2  FROM emp e
+  3  INNER JOIN dept d
+  4  ON e.deptno = d.deptno;
+
+     EMPNO ENAME      DNAME
+---------- ---------- --------------
+      7369 SMITH      RESEARCH
+      7499 ALLEN      SALES
+      7521 WARD       SALES
+      7566 JONES      RESEARCH
+      7654 MARTIN     SALES
+      7698 BLAKE      SALES
+      7782 CLARK      ACCOUNTING
+      7788 SCOTT      RESEARCH
+      7839 KING       ACCOUNTING
+      7844 TURNER     SALES
+      7876 ADAMS      RESEARCH
+      7900 JAMES      SALES
+      7902 FORD       RESEARCH
+      7934 MILLER     ACCOUNTING
+
+14 rows selected.
+
+SQL> Select e.empno, e,ename, d.dname
+  2  from emp e
+  3  LEFT OUTER dept d
+  4  ON e.deptno=d.deptno;
+LEFT OUTER dept d
+           *
+ERROR at line 3:
+ORA-00905: missing keyword
+
+
+SQL> SELECT d.deptno, d.dname, e.empno, e.ename
+  2  FROM dept d
+  3  LEFT JOIN emp e
+  4  ON d.deptno = e.deptno;
+
+    DEPTNO DNAME               EMPNO ENAME
+---------- -------------- ---------- ----------
+        20 RESEARCH             7369 SMITH
+        30 SALES                7499 ALLEN
+        30 SALES                7521 WARD
+        20 RESEARCH             7566 JONES
+        30 SALES                7654 MARTIN
+        30 SALES                7698 BLAKE
+        10 ACCOUNTING           7782 CLARK
+        20 RESEARCH             7788 SCOTT
+        10 ACCOUNTING           7839 KING
+        30 SALES                7844 TURNER
+        20 RESEARCH             7876 ADAMS
+        30 SALES                7900 JAMES
+        20 RESEARCH             7902 FORD
+        10 ACCOUNTING           7934 MILLER
+        40 OPERATIONS
+
+15 rows selected.
+======================================================================================================================
+
+BATCH-48 EXAM PAPER
+                                 ======================
+
+1.Write a query to display the employee name in uppercase from the EMPLOYEES table.
+
+2.Write a query to display the first 3 characters of each employee’s first name.
+
+3.Display the current system date in the format ‘DD-MON-YYYY’.
+
+4.Convert the string '2025-09-18' into DATE format using TO_DATE.
+
+5.Write a query to display the employee names and their salaries, 
+  rounded to the nearest 100.
+
+6.Display the maximum, minimum, and average salary from the EMPLOYEES table.
+
+7.Write a query to count the number of employees working in each department.
+
+8.From the EMPLOYEES table, display departments having more than 5 employees 
+  using GROUP BY and HAVING.
+
+9.Display employee names in ascending order of salary. If two employees have 
+  the same salary, sort them by name.
+
+10.Write a query to retrieve employees who work in departments 10 and 20,
+   using INNER JOIN with the DEPARTMENTS table.
+
+11.Display all employees and their department names, ensuring that employees
+   without departments are also displayed
+
+12.Display all departments and the employees in them, including departments
+   without employees 
+
+13.Display all employees and all departments, even if no match exists between them
+
+14.Write a query to display employee names along with their manager names 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
