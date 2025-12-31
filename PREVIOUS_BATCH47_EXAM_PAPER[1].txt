@@ -1,0 +1,527 @@
+                                   Naresh I Technologies
+                                       Test paper
+                                        B – 47
+
+1. Which of the following is NOT a DDL command in Oracle?
+
+a) CREATE
+
+b) ALTER
+
+c) SELECT
+
+d) DROP
+
+Answer:c) SELECT
+=================================================================================================================
+2. What does DDL stand for in Oracle?
+
+a) Data Deleting Language
+
+b) Data Definition Language
+
+c) Data Delegating Language
+
+d) Dummy Data Language
+
+Answer: b) Data Definition Language
+================================================================================================================================
+3. Which DDL command is used to remove a table from the database permanently?
+
+a) TRUNCATE
+
+b) DROP
+
+c) DELETE
+
+d) REMOVE
+
+Answer: b) DROP
+==============================================================================================================================
+
+4. Which command is used to change the structure of an existing table?
+
+a) CHANGE
+
+b) ALTER
+
+c) MODIFY
+
+d) UPDATE
+
+Answer:b) ALTER
+
+======================================================================================================================================
+5. The TRUNCATE command in Oracle is used to:
+
+a) Remove all rows from a table without logging individual row deletions
+
+b) Remove the table structure
+
+c) Remove a column
+
+d) Change a column’s datatype
+
+Answer: a) Remove all rows from a table without logging individual row deletions
+
+====================================================================================================================================
+6. Which of the following commands can be used to rename a table in Oracle?
+
+a) RENAME
+
+b) CHANGE
+
+c) ALTER
+
+d) UPDATE
+
+Answer: a) RENAME
+
+=====================================================================================================================================
+7. What is the effect of the DROP command on a table?
+
+a) Deletes all rows but keeps the structure
+
+b) Deletes the table structure and data
+
+c) Only deletes data
+
+d) Renames the table
+
+Answer: b) Deletes the table structure and data
+
+=====================================================================================================================================
+8. Which DDL command is used to add a new column to an existing table?
+
+a) INSERT
+
+b) ADD
+
+c) ALTER
+
+d) CREATE
+
+Answer:c) ALTER
+
+
+=======================================================================================================================================
+9.Which of the following statements contains an error?
+
+A. select * from emp where empid=1003;
+
+B. select empid from emp where empid=1006;
+
+C. select empid from emp;
+
+D. select empid where empid=1009 and firstname='ANUSHKA'; 
+
+Answer:D. select empid where empid=1009 and firstname='ANUSHKA'; 
+
+
+====================================================================================================================
+10. Which operator in Oracle is used to compare two values for equality?
+
+a) =
+
+b) ==
+
+c) :=
+
+d) EQ
+
+Answer:a) =
+===========================================================================================================================================
+
+11. The ‘||’ operator in Oracle is used for:
+
+a) Addition
+
+b) Concatenation
+
+c) Subtraction
+
+d) Division
+
+Answer: b) Concatenation
+====================================================================================================================================
+12. Which operator is used to check if a value exists in a list of values?
+
+a) LIKE
+
+b) IN
+
+c) BETWEEN
+
+d) EXISTS
+
+Answer: b) IN
+
+=============================================================================================================
+13. Which of the following statements is true about DDL commands?
+
+a) They can be rolled back
+
+b) They implicitly commit transactions
+
+c) They only affect data, not structure
+
+d) They are not logged
+
+Answer: b) They implicitly commit transactions
+=======================================================================================================================================
+14. Which DDL command is used to remove all rows from a table but keep the 
+    structure for future use?
+
+a) DROP
+
+b) DELETE
+
+c) TRUNCATE
+
+d) REMOVE
+
+Answer: c) TRUNCATE
+========================================================================================================================================================
+15. Which operator is used to check for NULL values in Oracle?
+
+a) = NULL
+
+b) IS NULL
+
+c) == NULL
+
+d) EQ NULL
+
+Answer:IS NULL
+===============================================================================================================================================
+16. What is the result of the following statement: 
+
+   ALTER TABLE employees DROP COLUMN salary;
+
+a) Drops the employees table
+
+b) Drops the salary column from employees table
+
+c) Drops all data from employees table
+
+d) Drops all columns except salary
+
+Answer: b) Drops the salary column from employees table
+====================================================================================================
+17. The BETWEEN operator in Oracle is used to:
+
+a) Check if a value matches a pattern
+
+b) Check if a value falls within a range
+
+c) Check if a value is NULL
+
+d) Concatenate two strings
+
+Answer: b) Check if a value falls within a range
+=======================================================================================================================
+
+18. Which command would you use to change the datatype of a column in a table?
+
+a) ALTER TABLE MODIFY
+
+b) ALTER TABLE CHANGE
+
+c) UPDATE TABLE
+
+d) RENAME COLUMN
+
+Answer: c) UPDATE TABLE
+
+=======================================================================================================
+19. Which of the following is NOT a valid operator in Oracle SQL?
+
+a) +
+
+b) -
+
+c) *
+
+d) %%
+
+Answer: d) %%
+=========================================================================================================
+20. What is the main difference between DROP and TRUNCATE commands?
+
+a) DROP removes only data, TRUNCATE removes structure
+
+b) DROP removes structure and data, TRUNCATE removes only data
+
+c) DROP can be rolled back, TRUNCATE cannot
+
+d) TRUNCATE is slower than DROP
+
+Answer:b) DROP removes structure and data, TRUNCATE removes only data
+------------------------------------------------------------------------------------------------------
+Queries:
+
+1.Write a SQL query to create a table named employees 
+  with columns: emp_id , emp_name , and salary. (2 Marks )
+
+ANSWER:
+SQL>  CREATE TABLE EMPLOYEE (EMP_ID NUMBER, EMP_NAME VARCHAR(10),SALARY NUMBER(10));
+
+Table created.
+
+
+
+2.insert 5 records into employees table?
+ANSWER:
+
+SQL> SELECT *FROM EMPLOYEE;
+
+    EMP_ID EMP_NAME       SALARY
+---------- ---------- ----------
+         1 SURAJ           90000
+         2 KARAN           80000
+         3 RUSHI           50000
+         4 TANU            40000
+         5 RAM             20000
+
+
+
+3.Write a SQL query to add a new column called department_id 
+  to the employees table. (2 Marks )
+ANSWER:
+
+SQL> ALTER TABLE EMPLOYEE ADD DEPARTMENT_ID NUMBER;
+
+Table altered.
+
+SQL> SELECT *FROM EMPLOYEE;
+
+    EMP_ID EMP_NAME       SALARY DEPARTMENT_ID
+---------- ---------- ---------- -------------
+         1 SURAJ           90000
+         2 KARAN           80000
+         3 RUSHI           50000
+         4 TANU            40000
+         5 RAM             20000
+
+4.Write a SQL query to modify the emp_name column in the employees table
+  to increase its size to varchar2(20). (2 Marks )
+ANSWER:
+
+
+SQL> ALTER TABLE EMPLOYEE MODIFY EMP_NAME VARCHAR(20);
+
+Table altered.
+
+SQL> SELECT *FROM EMPLOYEE;
+
+    EMP_ID EMP_NAME                 SALARY DEPARTMENT_ID
+---------- -------------------- ---------- -------------
+         1 SURAJ                     90000
+         2 KARAN                     80000
+         3 RUSHI                     50000
+         4 TANU                      40000
+         5 RAM                       20000
+5.Write a SQL query to rename the table employees to staff. (2 Marks )
+ANSWWR:
+
+SQL> RENAME EMPLOYEE TO STAFF1;
+
+Table renamed.
+
+6.Write a SQL query to drop the column department_id from the staff table. (2 Marks )
+ANSWER:
+SQL> ALTER TABLE STAFF1 DROP COLUMN DEPARTMENT_ID;
+
+Table altered.
+
+SQL> SELECT * FROM STAFF1;
+
+    EMP_ID EMP_NAME                 SALARY
+---------- -------------------- ----------
+         1 SURAJ                     90000
+         2 KARAN                     80000
+         3 RUSHI                     50000
+         4 TANU                      40000
+         5 RAM                       20000
+
+
+7.Write a SQL query to delete the staff table from the database. (2 Marks )
+
+ANSWER:
+
+SQL> DROP TABLE STAFF1;
+
+Table dropped.
+
+8.Write a SQL query to remove all rows from the employees table but keep its 
+  structure for future use. (2 Marks )
+ANSWER:SQL> FLASHBACK TABLE STAFF1  TO BEFORE  DROP;
+
+Flashback complete.
+
+
+9.Write a SQL query to display all columns from the employees table for those 
+  employees whose department_id is either 10, 20, or 30. (2 Marks )
+ANSWER:
+
+
+SQL> SELECT * FROM EMP WHERE  DEPTNO IN(10,20,30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500        500         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7900 JAMES      CLERK           7698 03-DEC-81        950        300         30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300        900         10
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+
+
+10.Write a SQL query to display all columns from the employees table for those 
+  employees whose salary is between 3000 and 5000 (inclusive). (2 Marks )
+ANSWER:
+
+SQL> SELECT * FROM EMP WHERE SAL BETWEEN 3000 AND 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT       7676 17-NOV-81       5000        600         10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000        800         20
+      7788 SCOTT      ANALYST         7566 09-DEC-82       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+
+11.Write a SQL query to display all columns from the employees table for those 
+   employees whose name starts with the letter 'A'. (2 Marks )
+ANSWER:
+
+
+SQL> SELECT *FROM EMP  WHERE ENAME LIKE 'A%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100        500         20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7876 ADAMS      CLERK           7788 12-JAN-83       1100                    20
+
+
+12.Write a SQL query to display the emp_id and a concatenated string showing the 
+   employee’s name and salary in the format: “emp_name earns salary” from 
+   the employees table. (2 Marks )
+ANSWER:
+
+
+SQL> SELECT EMPNO, ENAME || ' earns ' || SAL AS DETAILS FROM EMP;
+
+     EMPNO DETAILS
+---------- ---------------------------------------------------------
+      7369 SMITH earns 800
+      7499 ALLEN earns 1600
+      7521 WARD earns 1250
+      7566 JONES earns 2975
+      7654 MARTIN earns 1250
+      7698 BLAKE earns 2850
+      7782 CLARK earns 2450
+      7788 SCOTT earns 3000
+      7839 KING earns 5000
+      7844 TURNER earns 1500
+      7876 ADAMS earns 1100
+      7900 JAMES earns 950
+      7902 FORD earns 3000
+      7934 MILLER earns 1300
+      7369 SMITH earns 800
+      7499 ALLEN earns 1600
+      7521 WARD earns 1250
+      7566 JONES earns 2975
+      7654 MARTIN earns 1250
+      7698 BLAKE earns 2850
+      7782 CLARK earns 2450
+      7788 SCOTT earns 3000
+      7839 KING earns 5000
+      7844 TURNER earns 1500
+      7876 ADAMS earns 1100
+      7900 JAMES earns 950
+      7902 FORD earns 3000
+      7934 MILLER earns 1300
+
+13.Write a query display all the NAMES that contains SIRISHA from following EMP555 table? (2 Marks )
+
+           NAME
+     ----------------
+      SIRISHA GAYATRI
+      GAYATRI SIRISHA
+      ANUSHKA SHETTY
+      ANU SIRISHA RAI
+      SURYA SURYA
+
+ANSWER:
+
+SQL> SELECT* FROM EMP555 WHERE ENAME LIKE '%SIRISHA%';
+
+ENAME
+--------------------
+SIRISHA GAYATRI
+GAYATRI SIRISHA
+ANU SIRISHA RAI
+
+14.Write a query to display ENAME as (use aliasname EMP_NAME), SAL,JOB from EMP table 
+   and whose salary is greater than 2000 ?( 2 Marks )
+ANSWER:
+
+
+SQL> SELECT ENAME AS EMP_NAME,SAL,JOB FROM EMP WHERE SAL > 2000;
+
+EMP_NAME          SAL JOB
+---------- ---------- ---------
+JONES            2975 MANAGER
+BLAKE            2850 MANAGER
+CLARK            2450 MANAGER
+SCOTT            3000 ANALYST
+KING             5000 PRESIDENT
+FORD             3000 ANALYST
+JONES            2975 MANAGER
+BLAKE            2850 MANAGER
+CLARK            2450 MANAGER
+SCOTT            3000 ANALYST
+KING             5000 PRESIDENT
+FORD             3000 ANALYST
+
+15.Write a query To display employee who are working as a MANAGER,CLERK and earning salary
+   between 1500 and 3000 and joined in 1981 year and not working in the
+   departments 10,20 ? ( 4 Marks )
+
+SQL> SELECT * FROM EMP WHERE JOB IN('MANAGER','CLERK')AND SAL BETWEEN 1500 AND 3000 AND TO_CHAR (HIREDATE,'YYYY') ='1981' AND DEPTNO NOT IN (10,20);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+           30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+           30
+
