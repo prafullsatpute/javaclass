@@ -1,0 +1,264 @@
+
+Program-1
+=========
+Employee Directory:
+Develop an employee directory that stores employee information (name, position, salary) and allows CRUD operations using collections.
+
+Employee Class:
+This class represents an employee with attributes like name, position, and salary.
+It has a constructor to initialize an employee's details and getters/setters to access and modify these details.
+The toString() method is overridden to provide a string representation of an employee's details.
+
+Directory Class:
+This class manages a collection of Employee objects using an ArrayList.
+The addEmployee() method adds an employee to the directory.
+The displayAllEmployees() method prints details of all employees in the directory.
+The updateEmployee() method updates an employee's information at a specified index in the directory.
+The deleteEmployee() method removes an employee from the directory at a specified index.
+
+EmployeeDirectoryExample Class (Main Class):
+This class contains the main() method where an instance of Directory is created.
+Two employees, "Alice" and "Bob," are added to the directory with their respective positions and salaries.
+The displayAllEmployees() method is called to show all employees.
+The details of "Bob" are updated to reflect a change in position and salary.
+"Alice" is deleted from the directory.
+Finally, the updated list of employees is displayed again.
+
+
+Output:-
+Employee{name='Alice', position='Manager', salary=60000.0}
+Employee{name='Bob', position='Developer', salary=50000.0}
+
+Employee{name='Alice', position='Manager', salary=60000.0}
+Employee{name='Bob', position='Senior Developer', salary=55000.0}
+
+Employee{name='Bob', position='Senior Developer', salary=55000.0}
+
+Initial display after adding "Alice" as a Manager and "Bob" as a Developer.
+Display after updating "Bob's" information to reflect the change in position and salary.
+Display after deleting "Alice" from the directory.
+Final display of the remaining employee, "Bob", with his updated information.
+
+=========================================================
+package ArrayList.com;
+
+import java.util.ArrayList;
+
+public class Directory {
+    private ArrayList<Employee> employees = new ArrayList<>();
+
+    public void addEmployee(Employee emp) {
+        employees.add(emp);
+    }
+
+    public void displayAllEmployees() {
+        for (Employee e : employees) {
+            System.out.println(e);
+        }
+        System.out.println();
+    }
+
+    public void updateEmployee(int index, Employee emp) {
+        if (index >= 0 && index < employees.size()) {
+            employees.set(index, emp);
+        }
+    }
+
+    public void deleteEmployee(int index) {
+        if (index >= 0 && index < employees.size()) {
+            employees.remove(index);
+        }
+    }
+}
+========================================================================
+package ArrayList.com;
+
+public class Employee {
+    private String name;
+    private String position;
+    private double salary;
+
+    public Employee(String name, String position, double salary) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{name='" + name + "', position='" + position + "', salary=" + salary + "}";
+    }
+}
+==================================================================================================================================================
+
+package ArrayList.com;
+
+public class EmployeeDirectoryExample {
+
+	
+		    public static void main(String[] args) {
+
+		        Directory directory = new Directory();
+
+		        Employee e1 = new Employee("Alice", "Manager", 60000);
+		        Employee e2 = new Employee("Bob", "Developer", 50000);
+
+		        directory.addEmployee(e1);
+		        directory.addEmployee(e2);
+
+		        directory.displayAllEmployees();
+
+		        Employee updatedBob = new Employee("Bob", "Senior Developer", 55000);
+		        directory.updateEmployee(1, updatedBob);
+
+		        directory.displayAllEmployees();
+
+		        directory.deleteEmployee(0);
+
+		        directory.displayAllEmployees();
+		    }
+		
+
+		
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================================================================================================================================================================
+Program-02
+===========
+Travel Itinerary Planner:
+Build a travel itinerary planner that organizes destinations, activities, and schedules for travelers using collections.
+
+Activity:
+Represents an activity with a name and schedule.
+Contains a constructor to initialize the activity's details and getters to access these details.
+Overrides the toString() method to provide a string representation of an activity.
+
+Destination:
+Represents a destination with a name and a list of activities.
+Has a constructor to set the destination's name and initialize an empty list of activities.
+Provides methods to add activities to the destination and retrieve the list of activities.
+Overrides the toString() method to provide a string representation of a destination.
+
+ItineraryPlanner:
+Manages a list of destinations.
+Contains methods to add destinations and retrieve the list of destinations.
+
+TravelItineraryPlanner (Main Class):
+Creates an instance of ItineraryPlanner.
+Creates two Destination objects: "Paris" and "London".
+Adds activities to each destination.
+Adds these destinations to the itinerary planner.
+Displays the itinerary by listing destinations and their respective activities.
+
+
+Output:-
+Destination: Paris
+- Visit Eiffel Tower (Morning)
+- Louvre Museum (Afternoon)
+
+Destination: London
+- British Museum (Morning)
+- London Eye (Afternoon)
+
+
+
+Batch_51_Assignment.txt
+Displaying Batch_51_Assignment.txt.
