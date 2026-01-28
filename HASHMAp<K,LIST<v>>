@@ -71,4 +71,110 @@ Raj : has removed from HTML
 Enter your choice: 4
 Exiting Course Registration System.
 Batch_51_Assignment.txt
-Displaying Batch_51_Assignment.txt.
+Displaying Batch_51_Assignment.
+=========================================================================================================================================
+package com.prafull.hash_map;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+public class CourseRegistration {
+
+	public static void main(String[] args) {
+	
+		Scanner sc=new Scanner(System.in);
+		HashMap<String, ArrayList<String>> courseMap = new HashMap<>();
+	    
+
+		int choice;
+		do {
+			System.out.println("\n--- Course Registration Menu ---");
+			System.out.println("1. Register student to course");
+			System.out.println("2. Remove student from course");
+			System.out.println("3. View course-wise student list");
+			System.out.println("4. Exit");
+			System.out.print("Enter your choice: ");
+			
+			choice = sc.nextInt();
+			sc.nextLine();
+			
+			
+			switch (choice) {
+
+			case 1:
+			System.out.print("Enter course name: ");
+			String course = sc.nextLine();
+
+
+			System.out.print("Enter student name: ");
+			String student = sc.nextLine();
+
+
+			if (!courseMap.containsKey(course)) {
+			courseMap.put(course, new ArrayList<>());
+			}
+
+
+			courseMap.get(course).add(student);
+			System.out.println(student + " registered to " + course);
+			break;
+
+
+			case 2:
+			System.out.print("Enter course name: ");
+			String removeCourse = sc.nextLine();
+
+
+			System.out.print("Enter student name to remove: ");
+			String removeStudent = sc.nextLine();
+
+
+			if (courseMap.containsKey(removeCourse)) {
+			ArrayList<String> list = courseMap.get(removeCourse);
+
+
+			if (list.remove(removeStudent)) {
+			System.out.println(removeStudent + " : has removed from " + removeCourse);
+			} else {
+			System.out.println("Student not found!");
+			}
+
+
+			if (list.isEmpty()) {
+			courseMap.remove(removeCourse);
+			}
+
+
+			} else {
+			System.out.println("Course not found!");
+			}
+			break;
+
+			case 3:
+			    System.out.println("\nCourse → Students List:");
+			    
+			    for (String key : courseMap.keySet()) {
+			        System.out.println(key + " " + courseMap.get(key));
+			    }
+			    break;			
+			
+			
+			case 4:
+			System.out.println("Exiting Course Registration System.");
+			break;
+
+
+			default:
+			System.out.println("Invalid choice!");
+			}
+
+
+			} while (choice != 4);
+
+			sc.close();
+			}	
+			
+
+	}
+
+
+
