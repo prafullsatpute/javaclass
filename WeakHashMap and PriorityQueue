@@ -14,3 +14,48 @@ You need to implement the following functionality:
 Initialize a PriorityQueue that stores strings.
 Add five different colors ("Red", "Green", "Orange", "White", "Black") to the queue.
 Print all elements of the priority queue.
+=============================================================
+
+package com.prafull.hash_map;
+
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+
+public class IdentityHashMapTest {
+    public static void main(String[] args) {
+
+        HashMap<String, String> hm = new HashMap<>();
+        IdentityHashMap<String, String> ihm = new IdentityHashMap<>();
+
+        String k1 = new String("Java");
+        String k2 = new String("Java");
+
+        System.out.println("k1 == k2 : " + (k1 == k2));
+        System.out.println("k1.equals(k2) : " + k1.equals(k2));
+        System.out.println("hashmap");
+        hm.put(k1, "HashMap-1");
+        hm.put(k2, "HashMap-2");
+        System.out.println("IdentityHashMap");
+
+        ihm.put(k1, "Identity-1");
+        ihm.put(k2, "Identity-2");
+
+        System.out.println("\nHashMap Output:");
+        System.out.println(hm);
+
+        System.out.println("\nIdentityHashMap Output:");
+        System.out.println(ihm);
+    }
+}
+===================================================================
+output===
+k1 == k2 : false
+k1.equals(k2) : true
+hashmap
+IdentityHashMap
+
+HashMap Output:
+{Java=HashMap-2}
+
+IdentityHashMap Output:
+{Java=Identity-1, Java=Identity-2}
